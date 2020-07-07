@@ -1,0 +1,51 @@
+ul#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
+}
+
+ul#navbar > li {
+    float: left;
+}
+
+ul#navbar > li, ul#navbar > li > a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+ul#navbar > li a:hover, .button:hover {
+    background-color: #2196F3;
+    border-radius: 32px;
+}
+
+#content {
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.button{
+    display: inline-block;
+    padding: 4px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.button > a {
+    text-decoration: none;
+    color: black;
+}
+
+.social-media-button > img, .social-media-button > a > img {
+    width: 32px;
+    height: 32px;
+}
