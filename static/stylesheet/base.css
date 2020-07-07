@@ -49,3 +49,7 @@ ul#navbar > li a:hover, .button:hover {
     width: 32px;
     height: 32px;
 }
+
+#copyright {
+    text-align: center;
+}
