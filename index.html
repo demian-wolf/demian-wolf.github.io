@@ -3,14 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Home - Demian Wolf's Personal Page</title>
-        <link rel="stylesheet" href="/flask_src/static/stylesheet/base.css">
+        <link rel="stylesheet" href="/static/stylesheet/base.css">
         
-    <link rel="stylesheet" href="/flask_src/static/stylesheet/index.css">
-    <script>
-        function show_todo_alert() {
-            alert("This feature is not implemented yet (i.e. is a TODO)");
-        }
-    </script>
+    <link rel="stylesheet" href="/static/stylesheet/index.css">
 
     </head>
     <body>
@@ -37,20 +32,20 @@
     </p>
 
     <p>
-        <a href="/favourite-music.html">
-            <div class="button" style="padding: 10px;">My favourite music</div>
+        <a class="button" style="padding: 10px;" href="/favourite-music.html">
+            My favourite music
         </a>
-        <a onclick="show_todo_alert()">
-            <div class="button" style="padding: 10px;">My favourite movies</div>
+        <a class="button" style="padding: 10px;" href="/favourite-movies.html">
+            My favourite movies
         </a>
-        <a onclick="show_todo_alert()">
-            <div class="button" style="padding: 10px;">My favourite books</div>
+        <a class="button" style="padding: 10px;" href="/favourite-books.html">
+            My favourite books
         </a>
     </p>
 
     <p>
     <div style="display: inline-block">I am also at:</div>
-    <div class="button social-media-button"><a href="/flask_src/static/images/social-media/Github.png" target="_blank"
+    <div class="button social-media-button"><a href="/static/images/social-media/Github.png" target="_blank"
                                                title="Github"><img src="static/images/social-media/Github.png"></a>
     </div>
     <div class="button social-media-button"><a href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile"

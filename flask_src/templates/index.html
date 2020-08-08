@@ -4,11 +4,6 @@
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
-    <script>
-        function show_todo_alert() {
-            alert("This feature is not implemented yet (i.e. is a TODO)");
-        }
-    </script>
 {% endblock %}
 
 {% block content %}
@@ -28,14 +23,14 @@
     </p>
 
     <p>
-        <a href="{{ url_for('favourite_music') }}">
-            <div class="button" style="padding: 10px;">My favourite music</div>
+        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_music") }}">
+            My favourite music
         </a>
-        <a onclick="show_todo_alert()">
-            <div class="button" style="padding: 10px;">My favourite movies</div>
+        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_movies") }}">
+            My favourite movies
         </a>
-        <a onclick="show_todo_alert()">
-            <div class="button" style="padding: 10px;">My favourite books</div>
+        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_books") }}">
+            My favourite books
         </a>
     </p>
 

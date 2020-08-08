@@ -31,6 +31,13 @@ def favourite_music():
                  ("He's a Pirate (Pirates of the Carribbean Theme)", '')]})])
     return render_template("favourite-music.html", compositions=compositions)
 
+@app.route("/favourite-movies.html")
+def favourite_movies():
+    return render_template("favourite-movies.html")
+
+@app.route("/favourite-books.html")
+def favourite_books():
+    return render_template("favourite-books.html")
 
 if __name__ == '__main__':
     app.run()

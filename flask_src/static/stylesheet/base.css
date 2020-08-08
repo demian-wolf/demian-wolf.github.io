@@ -40,7 +40,7 @@ ul#navbar > li a:hover, .button:hover {
     white-space: nowrap;
 }
 
-.button > a {
+a.button {
     text-decoration: none;
     color: black;
 }
