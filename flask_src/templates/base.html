@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %} - Demian Wolf's Personal Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/base.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <ul id="navbar">
+            <li><a href="{{ url_for('index') }}" title="Go to the homepage">Home</a></li>
+            <li><a href="https://github.com/demian-wolf/" target="_blank" title="Visit my Github">My projects</a></li>
+            <li><a href="mailto:demianwolfssd@gmail.com" target="_blank" title="Write me an e-mail">Contact me</a></li>
+        </ul>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="copyright">
+            <p>© Demian Volkov 2020</p>
+            <p>Powered by Python Flask and Frozen-Flask</p>
+        </div>
+    </body>
+</html>

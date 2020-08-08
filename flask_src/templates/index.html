@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Home - Demian Wolf's Personal Page</title>
-        <link rel="stylesheet" href="/flask_src/static/stylesheet/base.css">
-        
-    <link rel="stylesheet" href="/flask_src/static/stylesheet/index.css">
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
     <script>
         function show_todo_alert() {
             alert("This feature is not implemented yet (i.e. is a TODO)");
         }
     </script>
+{% endblock %}
 
-    </head>
-    <body>
-        <ul id="navbar">
-            <li><a href="/" title="Go to the homepage">Home</a></li>
-            <li><a href="https://github.com/demian-wolf/" target="_blank" title="Visit my Github">My projects</a></li>
-            <li><a href="mailto:demianwolfssd@gmail.com" target="_blank" title="Write me an e-mail">Contact me</a></li>
-        </ul>
-        <div id="content">
-            
+{% block content %}
     <p>
         Hi!
     </p>
@@ -37,7 +28,7 @@
     </p>
 
     <p>
-        <a href="/favourite-music.html">
+        <a href="{{ url_for('favourite_music') }}">
             <div class="button" style="padding: 10px;">My favourite music</div>
         </a>
         <a onclick="show_todo_alert()">
@@ -50,7 +41,7 @@
 
     <p>
     <div style="display: inline-block">I am also at:</div>
-    <div class="button social-media-button"><a href="/flask_src/static/images/social-media/Github.png" target="_blank"
+    <div class="button social-media-button"><a href="{{ url_for('static', filename="images/social-media/Github.png") }}" target="_blank"
                                                title="Github"><img src="static/images/social-media/Github.png"></a>
     </div>
     <div class="button social-media-button"><a href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile"
@@ -60,11 +51,4 @@
                                                title="Клавогонки (en. KeyboardRaces)"><img
             src="http://klavogonki.ru/favicon.ico"></a></div>
     </p>
-
-        </div>
-        <div id="copyright">
-            <p>© Demian Volkov 2020</p>
-            <p>Powered by Python Flask and Frozen-Flask</p>
-        </div>
-    </body>
-</html>
+{% endblock %}
