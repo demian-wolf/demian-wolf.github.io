@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from collections import OrderedDict
 
 app = Flask(__name__)
-
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 @app.route('/')
 def index():
