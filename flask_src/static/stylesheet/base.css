@@ -1,4 +1,9 @@
-ul#navbar {
+body {
+    font-family: "DejaVu Serif";
+    font-size: 16px;
+}
+
+div#navbar > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,11 +11,11 @@ ul#navbar {
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }
 
-ul#navbar > li {
+div#navbar > ul > li {
     float: left;
 }
 
-ul#navbar > li, ul#navbar > li > a {
+div#navbar > ul > li, div#navbar > ul > li > a {
     display: block;
     color: black;
     text-align: center;
@@ -18,15 +23,25 @@ ul#navbar > li, ul#navbar > li > a {
     text-decoration: none;
 }
 
-ul#navbar > li a:hover, .button:hover {
+div#navbar > ul > li a:hover, .button:hover {
     background-color: #2196F3;
     border-radius: 32px;
+}
+
+div#navbar {
+    top: 0;
+    position: sticky;
+    z-index: 1000;
 }
 
 #content {
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
     margin-top: 10px;
     padding: 10px;
+}
+
+#copyright {
+    text-align: center;
 }
 
 .button{
@@ -43,8 +58,4 @@ ul#navbar > li a:hover, .button:hover {
 a.button {
     text-decoration: none;
     color: black;
-}
-
-#copyright {
-    text-align: center;
 }

@@ -7,11 +7,13 @@
         {% block head %}{% endblock %}
     </head>
     <body>
-        <ul id="navbar">
-            <li><a href="{{ url_for('index') }}" title="Go to the homepage">Home</a></li>
-            <li><a href="https://github.com/demian-wolf/" target="_blank" title="Visit my Github">My projects</a></li>
-            <li><a href="mailto:demianwolfssd@gmail.com" target="_blank" title="Write me an e-mail">Contact me</a></li>
-        </ul>
+        <div id="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}" title="Go to the homepage">Home</a></li>
+                <li><a href="https://github.com/demian-wolf/" target="_blank" title="Visit my Github">My projects</a></li>
+                <li><a href="mailto:demianwolfssd@gmail.com" target="_blank" title="Write me an e-mail">Contact me</a></li>
+            </ul>
+        </div>
         <div id="content">
             {% block content %}{% endblock %}
         </div>
