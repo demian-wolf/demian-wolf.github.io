@@ -1,4 +1,4 @@
-body {
+body,  body * {
     font-family: "DejaVu Serif";
     font-size: 16px;
 }
@@ -32,6 +32,7 @@ div#navbar {
     top: 0;
     position: sticky;
     z-index: 1000;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
 #content {
@@ -58,4 +59,8 @@ div#navbar {
 a.button {
     text-decoration: none;
     color: black;
+}
+
+.copyright-button {
+    vertical-align: -8px
 }
