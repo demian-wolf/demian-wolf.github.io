@@ -45,6 +45,16 @@ div#navbar {
     text-align: center;
 }
 
+@-webkit-keyframes button-animation { 
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes button-animation {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
 .button{
     display: inline-block;
     padding: 4px;
@@ -54,6 +64,21 @@ div#navbar {
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
+    border-radius: 32px;
+    border: 1px solid #2196F3;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button:hover {
+  -webkit-animation-name: button-animation
+  -webkit-animation-duration: 1s;
+  animation-name: button-animation;
+  animation-duration: 1s;
 }
 
 a.button {
