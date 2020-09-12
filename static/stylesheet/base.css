@@ -89,3 +89,7 @@ a.button {
 .copyright-button {
     vertical-align: -8px
 }
+
+img {
+    border: 0;
+}
