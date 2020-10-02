@@ -1,0 +1,11 @@
+.spoiler-content {
+    visibility: hidden;
+}
+
+.spoiler:hover > .spoiler-content {
+    visibility: visible;
+}
+
+ul > li {
+    padding-bottom: 10px;
+}

@@ -3,12 +3,15 @@ body,  body * {
     font-size: 16px;
 }
 
+div#navbar {
+    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
+}
+
 div#navbar > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }
 
 div#navbar > ul > li {
@@ -34,6 +37,31 @@ div#navbar {
     z-index: 1000;
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
 }
+
+#hamburger-icon {
+    display: none;
+    color: black;
+}
+
+/*@media screen and (max-width: 375px) {
+    #hamburger-icon {
+        display: inline;
+        top: 0;
+        right: 0;
+    }
+    
+    #hamburger-icon * {
+        text-align: right;
+    }
+    
+    div#navbar > ul > li {
+        display: none;
+    }
+    
+    div#navbar.responsive > ul > li {
+        display: block;
+    }
+}*/
 
 #content {
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);

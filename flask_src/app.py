@@ -39,5 +39,9 @@ def favourite_movies():
 def favourite_books():
     return render_template("favourite-books.html")
 
+@app.route("/codeclub.html")
+def codeclub():
+    return render_template("codeclub.html")
+
 if __name__ == '__main__':
     app.run()
