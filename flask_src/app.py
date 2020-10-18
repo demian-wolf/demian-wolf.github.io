@@ -1,7 +1,12 @@
-from flask import Flask, render_template
 from collections import OrderedDict
 
+from flask import Flask, render_template
+from flask_minify import minify
+
+
 app = Flask(__name__)
+minify(app=app, html=True, js=True, cssless=True)
+
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 @app.route('/')
@@ -11,6 +16,7 @@ def index():
 
 @app.route("/favourite-music.html")
 def favourite_music():
+    # I don't want to use a DB here
     compositions = OrderedDict([('Classical', {
         'Frédéric François Chopin': [('Waltz Rain', ''), ('Nocturne in E Flat Major (Op. 9 No. 2)', ''), (
             'Paul de Senneville -- Mariage d\'Amour (aka Frédéric François Chopin -- Spring Waltz)',
