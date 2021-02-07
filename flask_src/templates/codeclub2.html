@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}CodeClub Украина Информация{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/codeclub.css') }}">
+<script src="https://use.fontawesome.com/c6435311fd.js"></script>
+<script>
+    function collapse_pli() {
+        pli_info.style.display = "none";
+        pli_icon.classList.remove('fa-angle-up');
+        pli_icon.classList.add('fa-angle-down');
+    }
+
+    function expand_pli() {
+        pli_info.style.display = "block";
+        pli_icon.classList.remove('fa-angle-down');
+        pli_icon.classList.add('fa-angle-up');
+    }
+
+    function expand_hint(date) {
+        hint.style.display = "block";
+        hint_icon.classList.remove("fa-angle-down");
+        hint_icon.classList.add("fa-angle-up");
+    }
+
+    function collapse_hint(date) {
+        hint.style.display = "none";
+        hint_icon.classList.remove("fa-angle-up");
+        hint_icon.classList.add("fa-angle-down");
+    }
+
+    function ce_pli() {
+        pli_info = document.getElementById("previous-lessons-info");
+        pli_icon = document.getElementById("pli-icon");
+        if (pli_info.style.display == "none") {
+            expand_pli();
+        } else {
+            collapse_pli();
+        }
+    }
+
+    function ce_hint(date) {
+        hint = document.getElementById("hint-" + date);
+        hint_icon = document.getElementById("hint-" + date + "-icon");
+        if (hint.style.display == "none") {
+            expand_hint(date);
+        } else {
+            collapse_hint(date);
+        }
+    }
+</script>
+
+{% endblock %}
+
+{% block content %}
+Добро пожаловать! Здесь размещена вся актуальная информация для PythonFans группы CodeClub.
+</body>
+</html>

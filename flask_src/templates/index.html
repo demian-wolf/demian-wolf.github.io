@@ -6,52 +6,116 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
 {% endblock %}
 
-{% block content %}
-    <p>
-        Hi!
-    </p>
+{% block content %}    
+    <div id="greeting">
+        <img id="my-photo" src="https://i.stack.imgur.com/Xzoyg.png?s=328&g=1" alt='My "photo"'>
+        
+        <p>
+            Hi!
+        </p>
 
-    <p>
-        My name is Demian Volkov. I live in Kharkiv, Ukraine. I am 15 years old, and I am a high-school student.
-    </p>
+        <p>
+            My name is Demian Volkov. I am from Kharkiv, Ukraine. I am 15 years old, and I am a high-school student.
+        </p>
+        
+        <p>
+            This is my "personal page" website. Thank you for visiting it! <img id="smile" src="{{ url_for("static", filename="images/signs/smile.gif") }}" alt=":)">   
+        </p>
+    </div>
     
     <p>
-        I enjoy:
-        <ul>
-            <li><strong>programming</strong>. I love programming in Python (mostly creating desktop apps with Tkinter/PyQt, making simple games with PyGame, and web-scraping with requests+BeautifulSoup). I also enjoy creating web-sites with Flask/Django (back-end) and HTML+CSS+JS (front-end). In addition, I love competitive programming and solving logical tasks.</li>
-            <li><strong>linguistics</strong> and <strong>history</strong>, especially of Ukraine, The United States of America, and ancient Egypt, Greece and Rome.</li>
-            <li><strong>Muay Thai</strong> (aka Thai boxing)</li>
-        </ul>
+        My hobbies:
+        <div id="hobbies-container">
+            <div class="hobby">
+                <div class="hobby-title">&#128187; Programming</div>
+                <div class="hobby-description-container">
+                    <div class="hobby-description">
+                        Programming is my favorite hobby, and I devote most of my spare time to it.
+                        I am interested in a wide range of areas: creating GUIs, web development, gamedev, webscraping, automation and data science.
+                        I also like to participate in various competitive programming events.
+                        I mostly use these programming languages:
+                        <ul>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                            <li>HTML + CSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hobby">
+                <div class="hobby-title">&#8721; Math</div>
+                <div class="hobby-description-container">
+                    <div class="hobby-description">
+                        I enjoy solving various mathematical and logical puzzles.
+                    </div>
+                </div>
+            </div>
+            <div class="hobby">
+                <div class="hobby-title">&#127984; History</div>
+                <div class="hobby-description-container">
+                    <div class="hobby-description">
+                        I find studying history and culture of nations around the world very fascinating and interesting.
+                        These are some, in history of which I am interested the most:
+                        <ul>
+                            <li>Ukraine</li>
+                            <li>The United States of America</li>
+                            <li>ancient civilizations: Egypt, Greece, and Rome</li>
+                            <li>East-Asian civilizations: China, Korea, and Japan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="hobby">
+                <div class="hobby-title"><b><i>A</i></b> Linguistics</div>
+                <div class="hobby-description-container">
+                    <div class="hobby-description">
+                        Learning about languages around the globe is incredibly interesting for me.
+                        Knowing about their evolution, similarities and differences is very helpful for studying history.
+                    </div>
+                </div>
+            </div>
+            <div class="hobby">
+                <div class="hobby-title">&#129354; Muay Thai</div>
+                <div class="hobby-description-container">
+                    <div class="hobby-description">
+                        It is a martial art that is also known as "Thailand boxing".
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <p>
-        This is my "personal page" website. Thank you for visiting it! <img id="smile" src="{{ url_for("static", filename="images/signs/smile.gif") }}" alt=":)">
+        My favorites:
+        <p id="favorites-buttons-container">
+            <a class="button favorites-button" href="{{ url_for("favourite_music") }}">
+                <img src="{{ url_for("static", filename="images/signs/sitemap/music.png") }}" alt="Music"> My favourite music
+            </a>
+            <a class="button favorites-button" href="{{ url_for("favourite_movies") }}">
+                <img src="{{ url_for("static", filename="images/signs/sitemap/movies.png") }}" alt="Movies"> My favourite movies
+            </a>
+            <a class="button favorites-button" href="{{ url_for("favourite_books") }}">
+                <img src="{{ url_for("static", filename="images/signs/sitemap/books.png") }}" alt="Books"> My favourite books
+            </a>
+        </p>
     </p>
 
     <p>
-        Map of this website:
-        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_music") }}">
-            <img src="{{ url_for("static", filename="images/signs/sitemap/music.png") }}" alt="Music"> My favourite music
-        </a>
-        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_movies") }}">
-            <img src="{{ url_for("static", filename="images/signs/sitemap/movies.png") }}" alt="Movies"> My favourite movies
-        </a>
-        <a class="button" style="padding: 10px;" href="{{ url_for("favourite_books") }}">
-            <img src="{{ url_for("static", filename="images/signs/sitemap/books.png") }}" alt="Books"> My favourite books
-        </a>
-    </p>
-
-    <p>
-        I am also at:
-        <a class="button social-media-button" href="https://github.com/demian-wolf" target="_blank" title="Github">
-            <img src="{{ url_for("static", filename="images/social-media/Github.png") }}" alt="Github">
-        </a>
-        <a class="button social-media-button" href="https://www.facebook.com/demian.wolf.942" target="_blank" title="Facebook">
-            <img src="{{ url_for("static", filename="images/social-media/Facebook.png") }}" alt="Github">
-        </a>
-        <a class="button social-media-button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank" title="StackOverflow">
-            <img src="{{ url_for("static", filename="images/social-media/StackOverflow.png") }}" alt="StackOverflow">
-        </a>
-        <a class="button social-media-button" href="https://klavogonki.ru/u/#/546841/" target="_blank" title="Клавогонки (en. KeyboardRaces)">
-            <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. KeyboardRaces)">
-        </a>
+        My social networks profiles:
+        <p id="social-media-buttons-container">
+            <a class="button social-media-button" href="https://github.com/demian-wolf" target="_blank" title="Github">
+                <img src="{{ url_for("static", filename="images/social-media/Github.png") }}" alt="Github">
+            </a>
+            <a class="button social-media-button" href="https://www.facebook.com/demian.wolf.942" target="_blank" title="Facebook">
+                <img src="{{ url_for("static", filename="images/social-media/Facebook.png") }}" alt="Github">
+            </a>
+            <a class="button social-media-button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank" title="StackOverflow">
+                <img src="{{ url_for("static", filename="images/social-media/StackOverflow.png") }}" alt="StackOverflow">
+            </a>
+            <a class="button social-media-button" href="https://klavogonki.ru/u/#/546841/" target="_blank" title="Клавогонки (en. KeyboardRaces)">
+                <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. KeyboardRaces)">
+            </a>
+        </p>
     </p>
 {% endblock %}
