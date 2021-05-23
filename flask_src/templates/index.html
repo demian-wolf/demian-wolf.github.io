@@ -7,23 +7,23 @@
 {% endblock %}
 
 {% block content %}    
-    <div id="greeting">
-        <img data-aos="flip-up" id="my-photo" src="https://i.stack.imgur.com/Xzoyg.png?s=328&g=1" alt='My "photo"'>
+    <div id="greeting" data-aos="zoom-in">
+        <img data-aos="flip-up" id="my-photo" src="static/images/photo.jpg" alt='My "photo"'>
         
         <p>
             Hi!
         </p>
 
         <p>
-            My name is Demian Volkov. I am a 15 years-old high-school student from Kharkiv, Ukraine.
+            My name is Demian Volkov. I am a student from Kharkiv, Ukraine.
         </p>
         
         <p>
-            This is my "personal page" website. Thank you for visiting it! <img id="smile" src="{{ url_for("static", filename="images/signs/smile.gif") }}" alt=":)">   
+            Thank you for visiting my personal page! <img id="smile" src="{{ url_for("static", filename="images/signs/smile.gif") }}" alt=":)">   
         </p>
     </div>
     
-    <p>
+    <div data-aos="zoom-in">
         My hobbies:
         <div id="hobbies-container">
             <div class="hobby">
@@ -39,7 +39,7 @@
                             <li>C++</li>
                             <li>JavaScript</li>
                             <li>SQL</li>
-                            <li>HTML5 + CSS3</li>
+                            <li>HTML5 &amp; CSS3</li>
                         </ul>
                     </div>
                 </div>
@@ -85,8 +85,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
-    <p>
+    <div data-aos="zoom-in">
         My favorites:
         <p id="favorites-buttons-container">
             <a class="button favorites-button" href="{{ url_for("favourite_music") }}">
@@ -99,9 +100,9 @@
                 <img src="{{ url_for("static", filename="images/signs/sitemap/books.png") }}" alt="Books"> My favourite books
             </a>
         </p>
-    </p>
+    </div>
     
-    <p>
+    <div data-aos="zoom-in">
         My social networks profiles:
         <p id="social-media-buttons-container">
             <a class="button social-media-button" href="https://github.com/demian-wolf" target="_blank" title="Github">
@@ -117,5 +118,5 @@
                 <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. KeyboardRaces)">
             </a>
         </p>
-    </p>
+    </div>
 {% endblock %}
