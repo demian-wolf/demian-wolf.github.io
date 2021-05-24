@@ -28,7 +28,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
+
 .hobby {
     flex: 0 1 15%;
     margin: 10px;
