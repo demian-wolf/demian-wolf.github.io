@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block content %}    
-    <div id="greeting" data-aos="zoom-in">
-        <img data-aos="flip-up" id="my-photo" src="static/images/photo.jpg" alt='My "photo"'>
+    <div id="greeting">
+        <img id="my-photo" src="static/images/photo.jpg" alt='My "photo"'>
         
         <p>
             Hi!
@@ -23,7 +23,7 @@
         </p>
     </div>
     
-    <div data-aos="zoom-in">
+    <div>
         My hobbies:
         <div id="hobbies-container">
             <div class="hobby">
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div data-aos="zoom-in">
+    <div>
         My favorites:
         <p id="favorites-buttons-container">
             <a class="button favorites-button" href="{{ url_for("favourite_music") }}">
@@ -102,7 +102,7 @@
         </p>
     </div>
     
-    <div data-aos="zoom-in">
+    <div>
         My social networks profiles:
         <p id="social-media-buttons-container">
             <a class="button social-media-button" href="https://github.com/demian-wolf" target="_blank" title="Github">

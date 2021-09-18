@@ -2,26 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>{% block title %}{% endblock %} - Demian Wolf's Personal Page</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/base.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
-        <!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
-        
         {% block head %}{% endblock %}
     </head>
     <body>
         <div id="navbar">
-            <ul>
-                <li><a href="{{ url_for('index') }}" title="Go to the homepage">Demian Volkov's Personal Page</a></li>
-            </ul>
+            <a class="button" href="{{ url_for('index') }}" title="Homepage">
+                Demian Volkov's Personal Page
+            </a>
         </div>
         <div id="content">
             {% block content %}{% endblock %}
         </div>
-        <div id="copyright" data-aos="zoom-in">
+        <div id="copyright">
             <p>© 2020-2021 Demian Volkov</p>
             <p>Powered by <a class="button" target="_blank" href="https://flask.palletsprojects.com/">Flask</a>, <a class="button" target="_blank" href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a>, and <a class="button copyright-button" target="_blank" href="https://pages.github.com/">Github Pages</a>.</p>
             <p>
@@ -30,9 +26,5 @@
                 </a>
             </p>
         </div>
-        
-        <script>
-            // AOS.init();
-        </script>
     </body>
 </html>
