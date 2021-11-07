@@ -27,8 +27,8 @@
                                 {% else %}
                                     {% set path = url_for('static', filename="sound/favourite-music/" + genre + "/" + song[0] + ".mp3") %}
                                 {% endif %}
-                                <audio src="{{ path }}" class="music-item" controls>
-                                    <embed src="{{ path }}" class="music-item" loop="false" autostart="false">
+                                <audio src="{{ path }}" controls>
+                                    <embed src="{{ path }}" loop="false" autostart="false">
                                 </audio>
                             </li>
                         {% endfor %}

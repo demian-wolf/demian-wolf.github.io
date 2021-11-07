@@ -1,9 +1,5 @@
-.music-item {
-    vertical-align: middle;
-}
+audio {vertical-align: middle;}
 
 @media (max-width: 415px) {
-    .music-item {
-        width: 100%;
-    }
+    audio {width: 100%;}
 }

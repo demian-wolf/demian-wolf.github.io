@@ -1,6 +1,7 @@
 html {
     font-family: "Dejavu Serif", "Times New Roman", Arial, sans-serif, serif;
-    font-size: 16px;
+    font-size: 20px;
+    background-color: ivory;
 }
 
 #navbar {
@@ -12,18 +13,12 @@ html {
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }
 
-#navbar > a {
-    padding: 10px;
-}
+#navbar > a {padding: 10px;}
 
 #content {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 10px;
     padding: 10px;
-}
-
-#copyright {
-    text-align: center;
 }
 
 .button {
@@ -46,30 +41,22 @@ html {
     -ms-user-select: none;
     -khtml-user-select: none
 }
-
 .button:hover {
-    background-color: #2196F3;
+    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
     border-radius: 32px;
-    -webkit-animation-name: button-animation;
-    -webkit-animation-duration: 1s;
     animation-name: button-animation;
     animation-duration: 1s;
+    -webkit-animation-name: button-animation;
+    -webkit-animation-duration: 1s;
 }
 
 @-webkit-keyframes button-animation {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+@keyframes button-animation {
+    0% {opacity: 0.5;}
+    100% {opacity: 1;}
 }
 
-@keyframes button-animation {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+#copyright {text-align: center;}
