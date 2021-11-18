@@ -4,6 +4,32 @@
 
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
+    <script>
+        const totalPortfolioPages = 5;
+
+        function gotoPage(destPageId) {
+            document.getElementById("portfolio__contents_link").style.display = destPageId === 0 ? "none" : "block";
+            console.log(destPageId);
+            for (let pageId = 0; pageId <= totalPortfolioPages; pageId++) {
+                const pageElement = document.getElementById(`portfolio__page${pageId}`);
+                pageElement.style.display = pageId === destPageId ? "block" : "none";
+            }
+        }
+
+        function getCurrentPageId() {
+            const currentAnchor = window.location.hash;
+            const currentPageIdMatch = currentAnchor.match("^#portfolio__page(\\d+)$");
+            return currentPageIdMatch ? parseInt(currentPageIdMatch[1]) : 0;
+        }
+
+        function gotoCurrentPage() {
+            gotoPage(getCurrentPageId());
+        }
+
+        document.addEventListener("DOMContentLoaded", gotoCurrentPage);
+        window.addEventListener("hashchange", gotoCurrentPage);
+        window.addEventListener("popstate", gotoCurrentPage);
+    </script>
 {% endblock %}
 
 {% block content %}    
@@ -13,112 +39,74 @@
             <p>
                 Hi!
             </p>
-
             <p>
-                My name is Demian Volkov. I am a student from Kharkiv, Ukraine.
+                My name is Demian Volkov.
             </p>
-            
             <p>
-                Thank you for visiting my personal page! <img src="{{ url_for("static", filename="images/signs/smile.gif") }}" alt=":)">   
+                Glad to see you here!
             </p>
         </div>
     </div>
-    
-    <div>
-        My interests:
-        <div id="interests">
-            <div class="interest">
-                <div class="interest__title">&#128187; Programming</div>
-                <div class="interest__description_container">
-                    <div class="interest__description">
-                        I create web, desktop, and mobile applications,
-                        write automation and web scraping scripts,
-                        work with data science and machine learning.
-                        I also enjoy competitive programming.
-                        My favorite programming language is Python. I also work with JavaScript, C/C++, bash, and Tcl.
-                    </div>
-                </div>
+
+    <div id="portfolio">
+        <h1>Portfolio</h1>
+        <div id="portfolio__page0">
+            <h3 class="portfolio__page_title">Contents</h3>
+            <div id="portfolio__contents">
+                <a class="button" href="#portfolio__page1">
+                    <img src="{{ url_for('static', filename='images/portfolio/icons/software-development.png') }}" alt=""/>
+                    <span>Software Development</span>
+                </a>
+                <a class="button" href="#portfolio__page2">
+                    <img src="{{ url_for('static', filename='images/portfolio/icons/mentoring.png') }}" alt=""/>
+                    <span>Mentoring at CodeClub</span>
+                </a>
+                <a class="button" href="#portfolio__page3">Mathematics</a>
+                <a class="button" href="#portfolio__page4">Martial Arts</a>
+                <a class="button" href="#portfolio__page5">Achievements</a>
             </div>
-            <div class="interest">
-                <div class="interest__title">&#8721; Math</div>
-                <div class="interest__description_container">
-                    <div class="interest__description">
-                        I enjoy solving various mathematical and logical puzzles.
-                    </div>
-                </div>
-            </div>
-            <div class="interest">
-                <div class="interest__title">&#127984; History</div>
-                <div class="interest__description_container">
-                    <div class="interest__description">
-                        I find studying history and culture of nations around the world very fascinating and interesting.
-                        These are some, in history of which I am interested the most:
-                        <ul>
-                            <li>Ukraine</li>
-                            <li>The United States of America</li>
-                            <li>ancient civilizations: Egypt, Greece, and Rome</li>
-                            <li>East-Asian civilizations: China, Korea, and Japan</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="interest">
-                <div class="interest__title"><b><i>A</i></b> Linguistics</div>
-                <div class="interest__description_container">
-                    <div class="interest__description">
-                        Learning about languages around the globe is incredibly interesting for me.
-                        Knowledge about their evolution, similarities and differences is very helpful for studying history as well as for understanding cultures of other nations.
-                    </div>
-                </div>
-            </div>
-            <div class="interest">
-                <div class="interest__title">&#129354; Muay Thai</div>
-                <div class="interest__description_container">
-                    <div class="interest__description">
-                        It is a martial art that is also known as "Thailand boxing".
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div id="portfolio__page1">
+            <h3 class="portfolio__page_title">Software Development</h3>
+        </div>
+        <div id="portfolio__page2">
+            <h3 class="portfolio__page_title">Mentoring at CodeClub</h3>
+        </div>
+        <div id="portfolio__page3">
+            <h3 class="portfolio__page_title">Mathematics</h3>
+        </div>
+        <div id="portfolio__page4">
+            <h3 class="portfolio__page_title">Martial Arts</h3>
+        </div>
+        <div id="portfolio__page5">
+            <h3 class="portfolio__page_title">Achievements</h3>
+        </div>
+        <div id="portfolio__contents_link">
+            <a class="button" href="#portfolio__page0">Back to Contents</a>
         </div>
     </div>
 
-    <div>
-        <p id="fv-buttons">
-            <a class="button" href="{{ url_for("favourite_music") }}">
-                <img src="{{ url_for("static", filename="images/signs/sitemap/music.png") }}" alt="Music"> My favourite music
-            </a>
-            <a class="button" href="{{ url_for("favourite_movies") }}">
-                <img src="{{ url_for("static", filename="images/signs/sitemap/movies.png") }}" alt="Movies"> My favourite movies
-            </a>
-            <a class="button" href="{{ url_for("favourite_books") }}">
-                <img src="{{ url_for("static", filename="images/signs/sitemap/books.png") }}" alt="Books"> My favourite books
-            </a>
-        </p>
-    </div>
-    
-    <div>
-        <p id="sm-buttons">
-            <a class="button" href="mailto:demianwolfssd@gmail.com" target="_blank" title="Email">
-                <img src="{{ url_for("static", filename="images/social-media/Gmail.png") }}" alt="Email">
-            </a>
-            <a class="button" href="https://t.me/demian_wolf" target="_blank" title="Telegram">
-                <img src="{{ url_for("static", filename="images/social-media/Telegram.png") }}" alt="Telegram">
-            </a>
-            <a class="button" href="https://www.facebook.com/demian.wolf.942" target="_blank" title="Facebook">
-                <img src="{{ url_for("static", filename="images/social-media/Facebook.png") }}" alt="Github">
-            </a>
-            <a class="button" href="https://www.linkedin.com/in/demian-volkov-26557b16b/" target="_blank" title="LinkedIn">
-                <img src="{{ url_for("static", filename="images/social-media/LinkedIn.png") }}" alt="LinkedIn">
-            </a>
-            <a class="button" href="https://github.com/demian-wolf" target="_blank" title="Github">
-                <img src="{{ url_for("static", filename="images/social-media/Github.png") }}" alt="Github">
-            </a>
-            <a class="button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank" title="StackOverflow">
-                <img src="{{ url_for("static", filename="images/social-media/StackOverflow.png") }}" alt="StackOverflow">
-            </a>
-            <a class="button" href="https://klavogonki.ru/u/#/546841/" target="_blank" title="Клавогонки (en. KeyboardRaces)">
-                <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. Keyboardraces)">
-            </a>
-        </p>
+    <div id="sm-buttons">
+        <a class="button" href="mailto:demianwolfssd@gmail.com" target="_blank" title="Email">
+            <img src="{{ url_for("static", filename="images/social-media/Gmail.png") }}" alt="Email">
+        </a>
+        <a class="button" href="https://t.me/demian_wolf" target="_blank" title="Telegram">
+            <img src="{{ url_for("static", filename="images/social-media/Telegram.png") }}" alt="Telegram">
+        </a>
+        <a class="button" href="https://www.facebook.com/demian.wolf.942" target="_blank" title="Facebook">
+            <img src="{{ url_for("static", filename="images/social-media/Facebook.png") }}" alt="Github">
+        </a>
+        <a class="button" href="https://www.linkedin.com/in/demian-volkov-26557b16b/" target="_blank" title="LinkedIn">
+            <img src="{{ url_for("static", filename="images/social-media/LinkedIn.png") }}" alt="LinkedIn">
+        </a>
+        <a class="button" href="https://github.com/demian-wolf" target="_blank" title="Github">
+            <img src="{{ url_for("static", filename="images/social-media/Github.png") }}" alt="Github">
+        </a>
+        <a class="button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank" title="StackOverflow">
+            <img src="{{ url_for("static", filename="images/social-media/StackOverflow.png") }}" alt="StackOverflow">
+        </a>
+        <a class="button" href="https://klavogonki.ru/u/#/546841/" target="_blank" title="Клавогонки (en. KeyboardRaces)">
+            <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. Keyboardraces)">
+        </a>
     </div>
 {% endblock %}

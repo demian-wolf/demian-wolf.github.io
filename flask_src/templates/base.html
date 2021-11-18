@@ -9,17 +9,17 @@
         {% block head %}{% endblock %}
     </head>
     <body>
-        <div id="navbar">
+        <div id="navbar" class="card">
             <a class="button" href="{{ url_for('index') }}" title="Home">
                 Demian Volkov's Personal Page
             </a>
         </div>
-        <div id="content">
+        <div id="content" class="card">
             {% block content %}{% endblock %}
         </div>
-        <div id="copyright">
+        <div id="footer" class="card">
             <p>© 2020-2021 Demian Volkov</p>
-            <p>Powered by <a class="button" target="_blank" href="https://flask.palletsprojects.com/">Flask</a>, <a class="button" target="_blank" href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a>, and <a class="button copyright-button" target="_blank" href="https://pages.github.com/">Github Pages</a>.</p>
+            <p>Powered by <a target="_blank" href="https://flask.palletsprojects.com/">Flask</a>, <a target="_blank" href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a>, and <a class="copyright-button" target="_blank" href="https://pages.github.com/">Github Pages</a>.</p>
             <p>
                 <a href="https://info.flagcounter.com/Y1eW">
                     <img src="https://s01.flagcounter.com/count2/Y1eW/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
