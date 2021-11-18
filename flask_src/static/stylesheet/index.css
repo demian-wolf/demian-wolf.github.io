@@ -90,17 +90,20 @@
     border-radius: 32px;
 }
 
+.section {}
+.section__name {text-align: center;}
+
 #portfolio {
     max-width: 100%;
     padding: 10px;
 }
 
-#portfolio__contents {
+#portfolio__tabs {
     display: flex;
     flex-wrap: wrap;
 }
 
-#portfolio__contents > a {
+#portfolio__tabs > a {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
@@ -108,4 +111,12 @@
     align-items: center;
     padding: 20px;
     margin: 20px;
+}
+
+.portfolio__tab_caption {
+    text-align: center;
+}
+
+.portfolio__tab_button_active {
+    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }

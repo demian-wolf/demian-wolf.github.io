@@ -5,30 +5,35 @@
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
     <script>
-        const totalPortfolioPages = 5;
+        const totalPortfolioTabs = 4;
 
-        function gotoPage(destPageId) {
-            document.getElementById("portfolio__contents_link").style.display = destPageId === 0 ? "none" : "block";
-            console.log(destPageId);
-            for (let pageId = 0; pageId <= totalPortfolioPages; pageId++) {
-                const pageElement = document.getElementById(`portfolio__page${pageId}`);
-                pageElement.style.display = pageId === destPageId ? "block" : "none";
+        function gotoTab(destTabId) {
+            for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
+                const tab = document.getElementById(`portfolio__tab${tabId}`);
+                const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
+
+                if (tabId === destTabId) {
+                    tab.style.display = "block";
+                    tabButton.classList.add("portfolio__tab_button_active");
+                } else {
+                    tab.style.display = "none";
+                    tabButton.classList.remove("portfolio__tab_button_active");
+                }
             }
         }
 
-        function getCurrentPageId() {
-            const currentAnchor = window.location.hash;
-            const currentPageIdMatch = currentAnchor.match("^#portfolio__page(\\d+)$");
-            return currentPageIdMatch ? parseInt(currentPageIdMatch[1]) : 0;
+        function getCurrentTabId() {
+            const currentTabIdMatch = window.location.hash.match("^#portfolio__tab(\\d+)$");
+            return currentTabIdMatch ? parseInt(currentTabIdMatch[1]) : 1;
         }
 
-        function gotoCurrentPage() {
-            gotoPage(getCurrentPageId());
+        function gotoCurrentTab() {
+            gotoTab(getCurrentTabId());
         }
 
-        document.addEventListener("DOMContentLoaded", gotoCurrentPage);
-        window.addEventListener("hashchange", gotoCurrentPage);
-        window.addEventListener("popstate", gotoCurrentPage);
+        document.addEventListener("DOMContentLoaded", gotoCurrentTab);
+        window.addEventListener("hashchange", gotoCurrentTab);
+        window.addEventListener("popstate", gotoCurrentTab);
     </script>
 {% endblock %}
 
@@ -48,41 +53,28 @@
         </div>
     </div>
 
-    <div id="portfolio">
-        <h1>Portfolio</h1>
-        <div id="portfolio__page0">
-            <h3 class="portfolio__page_title">Contents</h3>
-            <div id="portfolio__contents">
-                <a class="button" href="#portfolio__page1">
-
-                    <span>Software Development</span>
-                </a>
-                <a class="button" href="#portfolio__page2">
-
-                    <span>Mentoring at CodeClub</span>
-                </a>
-                <a class="button" href="#portfolio__page3">Mathematics</a>
-                <a class="button" href="#portfolio__page4">Martial Arts</a>
-                <a class="button" href="#portfolio__page5">Achievements</a>
+    <div id="portfolio" class="section">
+        <h3 class="section__name">Portfolio</h3>
+        <div id="portfolio__tabs">
+            <a id="portfolio__tab1_button" class="button" href="#portfolio__tab1">Software Development</a>
+            <a id="portfolio__tab2_button" class="button" href="#portfolio__tab2">Mentoring at CodeClub</a>
+            <a id="portfolio__tab3_button" class="button" href="#portfolio__tab3">Mathematics</a>
+            <a id="portfolio__tab4_button" class="button" href="#portfolio__tab4">Martial Arts</a>
+        </div>
+        <div id="portfolio__tab1">
+            <h3 class="portfolio__tab_caption">Software Development</h3>
+            <div>
+                
             </div>
         </div>
-        <div id="portfolio__page1">
-            <h3 class="portfolio__page_title">Software Development</h3>
+        <div id="portfolio__tab2">
+            <h3 class="portfolio__tab_caption">Mentoring at CodeClub</h3>
         </div>
-        <div id="portfolio__page2">
-            <h3 class="portfolio__page_title">Mentoring at CodeClub</h3>
+        <div id="portfolio__tab3">
+            <h3 class="portfolio__tab_caption">Mathematics</h3>
         </div>
-        <div id="portfolio__page3">
-            <h3 class="portfolio__page_title">Mathematics</h3>
-        </div>
-        <div id="portfolio__page4">
-            <h3 class="portfolio__page_title">Martial Arts</h3>
-        </div>
-        <div id="portfolio__page5">
-            <h3 class="portfolio__page_title">Achievements</h3>
-        </div>
-        <div id="portfolio__contents_link">
-            <a class="button" href="#portfolio__page0">Back to Contents</a>
+        <div id="portfolio__tab4">
+            <h3 class="portfolio__tab_caption">Martial Arts</h3>
         </div>
     </div>
 
