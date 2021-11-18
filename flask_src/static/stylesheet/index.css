@@ -7,8 +7,6 @@
 
 #about-me__photo {
     border: 1px;
-    border-radius: 16px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 2px 2px 0 rgba(0,0,0,0.19);
     margin: 20px;
 }
 
@@ -88,12 +86,13 @@
 #sm-buttons > a, #sm-buttons > a > img {
     width: 32px;
     height: 32px;
+    border: none;
+    border-radius: 32px;
 }
 
 #portfolio {
     max-width: 100%;
     padding: 10px;
-    background-color: ivory;
 }
 
 #portfolio__contents {
