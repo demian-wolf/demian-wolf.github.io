@@ -59,3 +59,8 @@ body {
 #footer {
     text-align: center;
 }
+
+.collapsible__arrow:link {
+    text-decoration: none;
+    color: black;
+}

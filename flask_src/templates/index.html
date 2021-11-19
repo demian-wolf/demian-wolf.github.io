@@ -35,6 +35,31 @@
         window.addEventListener("hashchange", gotoCurrentTab);
         window.addEventListener("popstate", gotoCurrentTab);
     </script>
+    <script>
+        function _getCollapsible(collapsibleId) {
+            return document.getElementById(`collapsible${collapsibleId}`);
+        }
+        function _getCollapsibleContent(collapsibleId) {
+            return _getCollapsible(collapsibleId).querySelector(".collapsible__content");
+        }
+
+        function collapsibleSetState(collapsibleId, destState) {
+            _getCollapsibleContent(collapsibleId).style.display = destState ? "block" : "none";
+        }
+        function collapsibleToggle(collapsibleId) {
+            collapsibleSetState(collapsibleId, _getCollapsibleContent(collapsibleId).style.display === "none");
+
+            const collapsibleArrow = _getCollapsible(collapsibleId).querySelector(".collapsible__arrow");
+            collapsibleArrow.innerHTML = collapsibleArrow.innerHTML === "\u25BC" ? "\u25B2" : "\u25BC";
+        }
+
+        const totalCollapsibles = 1;
+        document.addEventListener("DOMContentLoaded", () => {
+            for (let collapsibleId = 1; collapsibleId <= totalCollapsibles; collapsibleId++) {
+                collapsibleToggle(collapsibleId);
+            }
+        });
+    </script>
 {% endblock %}
 
 {% block content %}    
@@ -64,7 +89,42 @@
         <div id="portfolio__tab1">
             <h3 class="portfolio__tab_caption">Software Development</h3>
             <div>
-                
+                <ul>
+                    I am a passionate software developer, with 5+ years of experience in:
+                    <li>creating <strong>websites</strong></li>
+                    <li>building <strong>desktop</strong> and <strong>mobile</strong> applications</li>
+                    <li>writing scripts for <strong>web scraping</strong> and <strong>automation</strong>, including Unix and Windows system administration</li>
+                    <li>the development of <strong>Data Science</strong> and <strong>Machine Learning</strong> solutions, especially in the area of <strong>NLP</strong>.</li>
+                </ul>
+                <div id="collapsible1" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__arrow" href="javascript:void(0);" onclick="collapsibleToggle(1);">
+                            ▼
+                        </a>
+                        <strong>My Tech Stack (Programming Languages and Frameworks I work with)</strong>:
+                    </p>
+                    <ul class="collapsible__content">
+                        <li><strong>Python</strong>: Flask, Django, Pyramid, bottle; PyQt5, tkinter, wxPython, Kivy, pygame; requests, grequests, aiohttp, BeautifulSoup4, lxml, Scrapy, Selenium, pywinauto, pyautogui; NumPy, Pandas, matplotlib, NLTK, spaCy, Plotly, OpenCV, scikit-learn, TensorFlow; Cython, Nuitka, Numba</li>
+                        <li><strong>HTML5</strong>, <strong>XHTML</strong></li>
+                        <li><strong>CSS3</strong>: Less, SASS, BootStrap</li>
+                        <li><strong>JS</strong>: VanillaJS, Node.js, jQuery, Vue.js, React, BootStrap</li>
+                        <li><strong>C++</strong>: STL, Boost, Qt, Windows API, OpenCV</li>
+                        <li><strong>Tcl</strong>: Tk, Tkhtml, selenium.tcl</li>
+                        <li><strong>bash</strong></li>
+                        <li><strong>Java</strong>: Selenium</li>
+                        <li><strong>SQL</strong>: MySQL, PostgreSQL, SQLite3</li>
+                        <li><strong>NoSQL</strong>: MongoDB, Redis</li>
+                        <li><strong>XML</strong>, <strong>XSD</strong></li>
+                        <li><strong>JSON</strong></li>
+                        <li><strong>Pickling</strong></li>
+                        <li><strong>VCS</strong>: Git, SVN, and Mercurial</li>
+                        <li><strong>Github</strong>, <strong>BitBucket</strong>, <strong>GitLab</strong></li>
+                        <li><strong>Heroku</strong>, <strong>Pythonanywhere</strong></li>
+                    </ul>
+                </div>
+                <p><strong>The Cosmopolite</strong> provides people from around the globe with opportunities to learn foreign languages competing in real-time.</p>
+                <p><strong>pyreverso</strong> is an open-source Pythonic REST API wrapper for the Reverso web services. The project has already received 28 stars on Github, has been downloaded 11k+ times, and is actively developed.</p>
+                <p>I actively participate in <strong>competitive programming</strong> contests and olympiads.</p>
             </div>
         </div>
         <div id="portfolio__tab2">
