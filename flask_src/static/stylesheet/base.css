@@ -1,6 +1,7 @@
 html {
     font-family: "Dejavu Serif", "Times New Roman", Arial, sans-serif, serif;
     font-size: 20px;
+    min-height: 100%;
 }
 
 body, #navbar {

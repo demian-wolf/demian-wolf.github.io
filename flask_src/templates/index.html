@@ -7,32 +7,33 @@
     <script>
         const totalPortfolioTabs = 3;
 
+        function showPortfolioTab(tabId) {
+            const tab = document.getElementById(`portfolio__tab${tabId}`);
+            const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
+
+            tab.style.display = "block";
+            tabButton.classList.add("portfolio__tab_button_active");
+        }
+        function hidePortfolioTab(tabId) {
+            const tab = document.getElementById(`portfolio__tab${tabId}`);
+            const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
+
+            tab.style.display = "none";
+            tabButton.classList.remove("portfolio__tab_button_active");
+        }
+
         function gotoPortfolioTab(destTabId) {
             for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
-                const tab = document.getElementById(`portfolio__tab${tabId}`);
-                const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
-
-                if (tabId === destTabId) {
-                    tab.style.display = "block";
-                    tabButton.classList.add("portfolio__tab_button_active");
-                } else {
-                    tab.style.display = "none";
-                    tabButton.classList.remove("portfolio__tab_button_active");
-                }
+                tabId === destTabId ? showPortfolioTab(tabId) : hidePortfolioTab(tabId);
             }
-
-            history.pushState(null, null, `#portfolio__tab${destTabId}`);
         }
-        function getCurrentPortfolioTabId() {
-            const currentTabIdMatch = window.location.hash.match("^#portfolio__tab(\\d+)$");
-            return currentTabIdMatch ? parseInt(currentTabIdMatch[1]) : 1;
-        }
-        function gotoCurrentPortfolioTab() {
-            gotoPortfolioTab(getCurrentPortfolioTabId());
+        function resetPortfolioTabs() {
+            for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
+                hidePortfolioTab(tabId);
+            }
         }
 
-        document.addEventListener("DOMContentLoaded", gotoCurrentPortfolioTab);
-        window.addEventListener("popstate", gotoCurrentPortfolioTab);
+        document.addEventListener("DOMContentLoaded", () => gotoPortfolioTab(1));
     </script>
     <script>
         const totalCollapsibles = 3;
@@ -108,9 +109,9 @@
     <div id="portfolio" class="section">
         <h3 class="section__name">Portfolio</h3>
         <div id="portfolio__tabs">
-            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1); return false">Academics & Sports</a>
-            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2); return false">Software Development</a>
-            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3); return false">Community Service</a>
+            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1)">Academics & Sports</a>
+            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2)">Software Development</a>
+            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3)">Community Service</a>
         </div>
         <div id="portfolio__tab1">
             <h3 class="portfolio__tab_caption">Academics & Sports</h3>
@@ -177,9 +178,16 @@
                         <td><p>Scored the total of 497 out of 500.</p></td>
                     </tr>
                     <tr>
-                        <td><p>The Best Student of Educational Establishment (2500+ students)</p></td>
-                        <td><p>2019-2020, a scholarship from Kharkiv City Council.</p></td>
-                        <td></td>
+                        <td><p>The Best Student of Educational Establishment</p></td>
+                        <td>
+                            <p>2019-2020, a scholarship from Kharkiv City Council</p>
+                            <p>2018-2019, a scholarship from Merefa City Council</p>
+                            <p>2017-2018, a scholarship from Merefa City Council</p>
+                        </td>
+                        <td>
+                            <p>2019-2020: 2500+ students</p>
+                            <p>2017-2018 and 2019-2020: 300+ students</p>
+                        </td>
                     </tr>
                     <tr>
                         <td>Multi-time Winner of Olympiads in Mathematics</td>
