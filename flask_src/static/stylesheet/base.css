@@ -3,8 +3,12 @@ html {
     font-size: 20px;
 }
 
-body {
+body, #navbar {
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
+}
+
+a:link, a:visited, a:hover, a:focus, a:active {
+  color: blue;
 }
 
 #navbar {
@@ -60,7 +64,8 @@ body {
     text-align: center;
 }
 
-.collapsible__arrow:link {
+.collapsible__toggle_link:link {
     text-decoration: none;
     color: black;
 }
+.collapsible__title {font-weight: bold;}

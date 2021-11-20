@@ -10,9 +10,7 @@
     margin: 20px;
 }
 
-#about-me__text {
-    text-align: center;
-}
+#about-me__text {}
 
 #interests {
     display: flex;
@@ -108,9 +106,7 @@
     flex: 1 1 0;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     padding: 20px;
-    margin: 20px;
 }
 
 .portfolio__tab_caption {
@@ -119,4 +115,33 @@
 
 .portfolio__tab_button_active {
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
+}
+
+table.portfolio__achievements, table.portfolio__achievements th, table.portfolio__achievements td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width: 600px) {
+    table thead {
+        display: none;
+    }
+    table td {
+        display: flex;
+    }
+    table td::before {
+        content: "";
+        font-weight: bold;
+        width: 120px;
+        min-width: 120px;
+    }
+}
+
+.portfolio__gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio__gallery_item {
+    padding-right: 20px;
 }

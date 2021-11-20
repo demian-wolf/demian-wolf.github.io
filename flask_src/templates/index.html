@@ -5,9 +5,9 @@
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
     <script>
-        const totalPortfolioTabs = 4;
+        const totalPortfolioTabs = 5;
 
-        function gotoTab(destTabId) {
+        function gotoPortfolioTab(destTabId) {
             for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
                 const tab = document.getElementById(`portfolio__tab${tabId}`);
                 const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
@@ -20,121 +20,410 @@
                     tabButton.classList.remove("portfolio__tab_button_active");
                 }
             }
-        }
 
-        function getCurrentTabId() {
+            history.pushState(null, null, `#portfolio__tab${destTabId}`);
+        }
+        function getCurrentPortfolioTabId() {
             const currentTabIdMatch = window.location.hash.match("^#portfolio__tab(\\d+)$");
             return currentTabIdMatch ? parseInt(currentTabIdMatch[1]) : 1;
         }
-
-        function gotoCurrentTab() {
-            gotoTab(getCurrentTabId());
+        function gotoCurrentPortfolioTab() {
+            gotoPortfolioTab(getCurrentPortfolioTabId());
         }
 
-        document.addEventListener("DOMContentLoaded", gotoCurrentTab);
-        window.addEventListener("hashchange", gotoCurrentTab);
-        window.addEventListener("popstate", gotoCurrentTab);
+        document.addEventListener("DOMContentLoaded", gotoCurrentPortfolioTab);
+        window.addEventListener("popstate", gotoCurrentPortfolioTab);
     </script>
     <script>
+        const totalCollapsibles = 7;
+
         function _getCollapsible(collapsibleId) {
             return document.getElementById(`collapsible${collapsibleId}`);
         }
         function _getCollapsibleContent(collapsibleId) {
             return _getCollapsible(collapsibleId).querySelector(".collapsible__content");
         }
+        function _getCollapsibleArrow(collapsibleId) {
+            return _getCollapsible(collapsibleId).querySelector(".collapsible__arrow")
+        }
 
         function collapsibleSetState(collapsibleId, destState) {
             _getCollapsibleContent(collapsibleId).style.display = destState ? "block" : "none";
+            _getCollapsibleArrow(collapsibleId).innerHTML = destState ?  "\u25B2": "\u25BC";
         }
         function collapsibleToggle(collapsibleId) {
-            collapsibleSetState(collapsibleId, _getCollapsibleContent(collapsibleId).style.display === "none");
-
-            const collapsibleArrow = _getCollapsible(collapsibleId).querySelector(".collapsible__arrow");
-            collapsibleArrow.innerHTML = collapsibleArrow.innerHTML === "\u25BC" ? "\u25B2" : "\u25BC";
+            const newState = _getCollapsibleContent(collapsibleId).style.display === "none";
+            collapsibleSetState(collapsibleId, newState);
         }
 
-        const totalCollapsibles = 1;
         document.addEventListener("DOMContentLoaded", () => {
             for (let collapsibleId = 1; collapsibleId <= totalCollapsibles; collapsibleId++) {
-                collapsibleToggle(collapsibleId);
+                collapsibleSetState(collapsibleId, false);
             }
         });
     </script>
 {% endblock %}
 
-{% block content %}    
+{% block content %}
     <div id="about-me">
         <img id="about-me__photo" src="static/images/photo.png" alt='My "photo"'>
         <div id="about-me__text">
-            <p>
-                Hi!
-            </p>
-            <p>
-                My name is Demian Volkov.
-            </p>
-            <p>
-                Glad to see you here!
-            </p>
+            <p>Hi! I'm glad too see you on my Portfolio Website.<br/>
+            My name is Demian Volkov. I am a 16-years-old high-school student from Ukraine.</p>
+            <p>I'm interested in math, linguistics, biology, history.<br/>
+            I practice martial arts for 10 years.<br/>
+            But my main is software development.</p>
+            <p>See my Portfolio below for details.</p>
         </div>
     </div>
 
     <div id="portfolio" class="section">
         <h3 class="section__name">Portfolio</h3>
         <div id="portfolio__tabs">
-            <a id="portfolio__tab1_button" class="button" href="#portfolio__tab1">Software Development</a>
-            <a id="portfolio__tab2_button" class="button" href="#portfolio__tab2">Mentoring at CodeClub</a>
-            <a id="portfolio__tab3_button" class="button" href="#portfolio__tab3">Mathematics</a>
-            <a id="portfolio__tab4_button" class="button" href="#portfolio__tab4">Martial Arts</a>
+            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1); return false">Software Development</a>
+            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2); return false">Community Service</a>
+            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3); return false">Mathematics</a>
+            <a id="portfolio__tab4_button" class="button" onclick="gotoPortfolioTab(4); return false">Language & Literature</a>
+            <a id="portfolio__tab5_button" class="button" onclick="gotoPortfolioTab(5); return false">Other</a>
         </div>
         <div id="portfolio__tab1">
             <h3 class="portfolio__tab_caption">Software Development</h3>
             <div>
-                <ul>
-                    I am a passionate software developer, with 5+ years of experience in:
-                    <li>creating <strong>websites</strong></li>
-                    <li>building <strong>desktop</strong> and <strong>mobile</strong> applications</li>
-                    <li>writing scripts for <strong>web scraping</strong> and <strong>automation</strong>, including Unix and Windows system administration</li>
-                    <li>the development of <strong>Data Science</strong> and <strong>Machine Learning</strong> solutions, especially in the area of <strong>NLP</strong>.</li>
-                </ul>
+                <div>
+                    <p>I am a passionate software developer with 5+ years of experience in:</p>
+                    <ul>
+                        <li>creating <strong>websites</strong></li>
+                        <li>building <strong>desktop</strong> and <strong>mobile</strong> applications</li>
+                        <li>writing scripts for <strong>web scraping</strong> and <strong>automation</strong>, including
+                            Unix and Windows system administration
+                        </li>
+                        <li>the development of <strong>Data Science</strong> and <strong>Machine Learning</strong>
+                            solutions, especially in the area of <strong>NLP</strong></li>
+                    </ul>
+                    <p>I actively participate in <strong>competitive programming</strong> contests and olympiads.</p>
+                </div>
                 <div id="collapsible1" class="collapsible">
                     <p class="collapsible__title">
-                        <a class="collapsible__arrow" href="javascript:void(0);" onclick="collapsibleToggle(1);">
-                            ▼
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(1);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Tech Stack (Programming Languages and Frameworks I work with)
                         </a>
-                        <strong>My Tech Stack (Programming Languages and Frameworks I work with)</strong>:
                     </p>
-                    <ul class="collapsible__content">
-                        <li><strong>Python</strong>: Flask, Django, Pyramid, bottle; PyQt5, tkinter, wxPython, Kivy, pygame; requests, grequests, aiohttp, BeautifulSoup4, lxml, Scrapy, Selenium, pywinauto, pyautogui; NumPy, Pandas, matplotlib, NLTK, spaCy, Plotly, OpenCV, scikit-learn, TensorFlow; Cython, Nuitka, Numba</li>
-                        <li><strong>HTML5</strong>, <strong>XHTML</strong></li>
-                        <li><strong>CSS3</strong>: Less, SASS, BootStrap</li>
-                        <li><strong>JS</strong>: VanillaJS, Node.js, jQuery, Vue.js, React, BootStrap</li>
-                        <li><strong>C++</strong>: STL, Boost, Qt, Windows API, OpenCV</li>
-                        <li><strong>Tcl</strong>: Tk, Tkhtml, selenium.tcl</li>
-                        <li><strong>bash</strong></li>
-                        <li><strong>Java</strong>: Selenium</li>
-                        <li><strong>SQL</strong>: MySQL, PostgreSQL, SQLite3</li>
-                        <li><strong>NoSQL</strong>: MongoDB, Redis</li>
-                        <li><strong>XML</strong>, <strong>XSD</strong></li>
-                        <li><strong>JSON</strong></li>
-                        <li><strong>Pickling</strong></li>
-                        <li><strong>VCS</strong>: Git, SVN, and Mercurial</li>
-                        <li><strong>Github</strong>, <strong>BitBucket</strong>, <strong>GitLab</strong></li>
-                        <li><strong>Heroku</strong>, <strong>Pythonanywhere</strong></li>
-                    </ul>
+                    <div class="collapsible__content">
+                        <ul>
+                            <li><strong>Python</strong>: Flask, Django, Pyramid, bottle; PyQt5, tkinter, wxPython, Kivy,
+                                pygame; requests, grequests, aiohttp, BeautifulSoup4, lxml, Scrapy, Selenium, pywinauto,
+                                pyautogui; NumPy, Pandas, matplotlib, NLTK, spaCy, Plotly, OpenCV, scikit-learn,
+                                TensorFlow; Cython, Nuitka, Numba
+                            </li>
+                            <li><strong>HTML5</strong>, <strong>XHTML</strong></li>
+                            <li><strong>CSS3</strong>: Less, SASS, BootStrap</li>
+                            <li><strong>JS</strong>: VanillaJS, Node.js, jQuery, Vue.js, React, BootStrap</li>
+                            <li><strong>C++</strong>: STL, Boost, Qt, Windows API, OpenCV</li>
+                            <li><strong>Tcl</strong>: Tk, Tkhtml, selenium.tcl</li>
+                            <li><strong>bash</strong></li>
+                            <li><strong>Java</strong>: Selenium</li>
+                            <li><strong>SQL</strong>: MySQL, PostgreSQL, SQLite3</li>
+                            <li><strong>NoSQL</strong>: MongoDB, Redis</li>
+                            <li><strong>XML</strong>, <strong>XSD</strong></li>
+                            <li><strong>JSON</strong></li>
+                            <li><strong>Pickling</strong></li>
+                            <li><strong>VCS</strong>: Git, SVN, and Mercurial</li>
+                            <li><strong>Github</strong>, <strong>BitBucket</strong>, <strong>GitLab</strong></li>
+                            <li><strong>Heroku</strong>, <strong>Pythonanywhere</strong></li>
+                        </ul>
+                    </div>
                 </div>
-                <p><strong>The Cosmopolite</strong> provides people from around the globe with opportunities to learn foreign languages competing in real-time.</p>
-                <p><strong>pyreverso</strong> is an open-source Pythonic REST API wrapper for the Reverso web services. The project has already received 28 stars on Github, has been downloaded 11k+ times, and is actively developed.</p>
-                <p>I actively participate in <strong>competitive programming</strong> contests and olympiads.</p>
+                <div id="collapsible2" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(2);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Projects
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <p><strong>The Cosmopolite</strong> provides people from around the globe with opportunities to
+                            learn foreign languages competing in real-time.</p>
+                        <p><strong>pyreverso</strong> is an open-source Pythonic REST API wrapper for the Reverso web
+                            services. The project has already received 28 stars on Github, has been downloaded 11k+
+                            times, and is actively developed.</p>
+                    </div>
+                </div>
+                <div id="collapsible3" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(3);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Achievements
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <table class="portfolio__achievements">
+                            <thead>
+                            <tr>
+                                <th>Achievement</th>
+                                <th>Years & Level</th>
+                                <th>Additional Information</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Winner of UOI-2021</td>
+                                <td>
+                                    <p>2020-2021, II stage, National level</p>
+                                </td>
+                                <td>Ukrainian Olympiad in Informatics (Competitive Programming)</td>
+                            </tr>
+                            <tr>
+                                <td>Top 5 at iTalent</td>
+                                <td><p>2019-2020, National Stage</p></td>
+                                <td>Desktop & Mobile Software Nomination</td>
+                            </tr>
+                            <tr>
+                                <td><p>Multi-time Winner of Olympiads in Informatics</p></td>
+                                <td>
+                                    <p>2019-2020 (3rd place in the region, 1st place in the district</p>
+                                    <p>2018-2019 (1st place in the district)</p>
+                                    <p>2017-2018 (1st place in the city)</p>
+                                    <p>2016-2017 (1st place in the district)</p>
+                                </td>
+                                <td><p>Competitive Programming</p></td>
+                            </tr>
+                            <tr>
+                                <td>Multi-time Winner of Olympiads in IT</td>
+                                <td>
+                                    <p>2019-2020 (2nd place in the district)</p>
+                                    <p>2018-2019 (1st place in the district).</p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Winner of the Regional Festival in Computer Graphics and Animation</td>
+                                <td><p>2017-2018 (1st place in the region)</p></td>
+                                <td>The Web Design nomination</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="portfolio__tab2">
-            <h3 class="portfolio__tab_caption">Mentoring at CodeClub</h3>
+            <h3 class="portfolio__tab_caption">Community Service</h3>
+            <div>
+                <p>
+                    Software development is an art.
+                    While writers create books and composers make music, software developers build websites, apps,
+                    and games without which we can't imagine our lives. I want others to dive into Software Development,
+                    feel it, and use it to make our world a better place. That's why I share my experience with people
+                    around the globe.
+                </p>
+            </div>
+            <div>
+                <h4>CodeClub</h4>
+                <div>
+                    <div>
+                        <img width="128px" height="128px" src="https://codeclub.org/assets/home/mission/code-club-logo-9261b7bce76889aa55f3e783e4fb31abfd3937ab76f3dd8a5d468d533023a96f.png" alt="The CodeClub logo"/>
+                    </div>
+                    <div>
+                        <p>
+                            I am a mentor at <a href="https://codeclub.org/" target="_blank">CodeClub</a>,
+                            an international non-profit organization that helps teenagers from 160+ countries
+                            of the world learn to code.
+                        </p>
+                        <p>
+                        I started working at the <a href="https://codeclub.com.ua/" target="_blank">Ukrainian branch</a> of the organization two years ago,
+                        and became the <a href="https://www.facebook.com/CodeClubUA/posts/3223243804437926" target="_blank">youngest mentor</a> there.
+                        </p>
+                        <p>
+                            Since then, I've taught 40+ young people from different parts of the country. Not only did they acquire a solid knowledge of the basics of coding, but, what's more important, they got interested in programming, and many of them decided to link their future lives with it. I mentored different students. Some have written their first line of code with me, while others had prior programming experience and were looking for opportunities to boost their skills.
+                        </p>
+                        <p>
+                            I conduct weekly online lessons via Zoom, which last about 2 hours on average.
+                        </p>
+                        <p>
+                            To improve students' learning experience, I built an online LMS (learning management system). Now students have everything in one place, just one click away from them: from sending the homework and receiving the feedback to real-time chats with the mentor.
+                            <a href="https://codeclubua.pythonanywhere.com/" target="_blank">Check it out!</a>
+                        </p>
+                    </div>
+                </div>
+                <div id="collapsible4">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(4);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            Video Gallery
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <div class="portfolio__gallery">
+                            <div class="portfolio__gallery_item">
+                                <p>My report at the end of 2020:</p>
+                                <iframe src="https://www.youtube.com/embed/dvABM9gyNMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="portfolio__gallery_item">
+                                <p>A video recording of a lesson:</p>
+                                <iframe src="https://www.youtube.com/embed/qnzzT75tyXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4>Social Media</h4>
+                <p>
+                    I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf">StackOverflow</a> and many programming-related Facebook groups,
+                    especially <a href="https://www.facebook.com/groups/python/" target="_blank">Python</a>.
+                </p>
+                <p>
+                    I am also the moderator at the <a href="https://www.facebook.com/groups/pythonautomation/" target="_blank">Python Automation</a> Facebook group with 1,500+ members.
+                </p>
+            </div>
         </div>
         <div id="portfolio__tab3">
             <h3 class="portfolio__tab_caption">Mathematics</h3>
+            <div>
+                <p>
+                    I really love Mathematics.
+                </p>
+                <p>
+                    My main areas of interest is Discrete Math
+                    (especially Combinatorics, Probability, Set Theory, and Number Theory) as well as Statistics.
+                </p>
+                <p>
+                    <img src="https://miro.medium.com/max/1248/1*1CziRAeRnF4UsCrhryH9yw.png" alt="Mathematics"/>
+                </p>
+                <div id="collapsible5" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(5);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Achievements
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <table class="portfolio__achievements">
+                            <thead>
+                                <tr>
+                                    <th>Achievement</th>
+                                    <th>Years & Level</th>
+                                    <th>Additional Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Multi-time Winner of Olympiads in Mathematics</td>
+                                    <td>
+                                        <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
+                                        <p>2018-2019 (3rd place in the city)</p>
+                                        <p>2017-2018 (1st place in the city)</p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="portfolio__tab4">
-            <h3 class="portfolio__tab_caption">Martial Arts</h3>
+            <h3 class="portfolio__tab_caption">Language & Literature</h3>
+            <div>
+                <p>
+                    I really love Mathematics.
+                </p>
+                <p>
+                    My main areas of interest is Discrete Math
+                    (especially Combinatorics, Probability, Set Theory, and Number Theory) as well as Statistics.
+                </p>
+                <p>
+                    <img src="https://miro.medium.com/max/1248/1*1CziRAeRnF4UsCrhryH9yw.png" alt="Mathematics"/>
+                </p>
+                <div id="collapsible5" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(5);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Achievements
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <table class="portfolio__achievements">
+                            <thead>
+                                <tr>
+                                    <th>Achievement</th>
+                                    <th>Years & Level</th>
+                                    <th>Additional Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Multi-time Winner of Olympiads in Mathematics</td>
+                                    <td>
+                                        <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
+                                        <p>2018-2019 (3rd place in the city)</p>
+                                        <p>2017-2018 (1st place in the city)</p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio__tab5">
+            <h3 class="portfolio__tab_caption">IMPORTANT</h3>
+            <div>
+                <p>
+
+                </p>
+                <p>
+
+                </p>
+                <div id="collapsible6" class="collapsible">
+                    <p class="collapsible__title">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(7);">
+                            <span class="collapsible__arrow">
+                                ▼
+                            </span>
+                            My Achievements
+                        </a>
+                    </p>
+                    <div class="collapsible__content">
+                        <table class="portfolio__achievements">
+                            <thead>
+                                <tr>
+                                    <th>Achievement</th>
+                                    <th>Years & Level</th>
+                                    <th>Additional Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Multi-time Winner of the International Taras Shevchenko Student and Students' Language and Literature Competition</td>
+                                    <td>
+                                        <p>2017-2018 (3rd place in the region, 1st place in the district)</p>
+                                        <p>2016-2017 (<strong>1st place nationally</strong>, 2nd place in the region, 1st place in the district)</p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -154,10 +443,12 @@
         <a class="button" href="https://github.com/demian-wolf" target="_blank" title="Github">
             <img src="{{ url_for("static", filename="images/social-media/Github.png") }}" alt="Github">
         </a>
-        <a class="button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank" title="StackOverflow">
+        <a class="button" href="https://stackoverflow.com/users/8661764/demian-wolf?tab=profile" target="_blank"
+           title="StackOverflow">
             <img src="{{ url_for("static", filename="images/social-media/StackOverflow.png") }}" alt="StackOverflow">
         </a>
-        <a class="button" href="https://klavogonki.ru/u/#/546841/" target="_blank" title="Клавогонки (en. KeyboardRaces)">
+        <a class="button" href="https://klavogonki.ru/u/#/546841/" target="_blank"
+           title="Клавогонки (en. KeyboardRaces)">
             <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. Keyboardraces)">
         </a>
     </div>
