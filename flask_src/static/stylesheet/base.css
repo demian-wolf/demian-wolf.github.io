@@ -8,7 +8,8 @@ body, #navbar {
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
-  color: blue;
+    color: blue;
+    text-decoration: none;
 }
 
 #navbar {
@@ -68,4 +69,6 @@ a:link, a:visited, a:hover, a:focus, a:active {
     text-decoration: none;
     color: black;
 }
-.collapsible__title {font-weight: bold;}
+.collapsible__title {
+    font-weight: bold;
+}

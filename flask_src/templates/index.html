@@ -5,7 +5,7 @@
 {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
     <script>
-        const totalPortfolioTabs = 5;
+        const totalPortfolioTabs = 3;
 
         function gotoPortfolioTab(destTabId) {
             for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
@@ -35,7 +35,7 @@
         window.addEventListener("popstate", gotoCurrentPortfolioTab);
     </script>
     <script>
-        const totalCollapsibles = 7;
+        const totalCollapsibles = 3;
 
         function _getCollapsible(collapsibleId) {
             return document.getElementById(`collapsible${collapsibleId}`);
@@ -70,9 +70,11 @@
         <div id="about-me__text">
             <p>Hi! I'm glad too see you on my Portfolio Website.<br/>
             My name is Demian Volkov. I am a 16-years-old high-school student from Ukraine.</p>
-            <p>I'm interested in math, linguistics, biology, history.<br/>
-            I practice martial arts for 10 years.<br/>
-            But my main is software development.</p>
+            <p>
+                I'm interested in math and linguistics.<br/>
+                I practice martial arts for 10 years.<br/>
+                But my main interest is software development.
+            </p>
             <p>See my Portfolio below for details.</p>
         </div>
     </div>
@@ -80,13 +82,107 @@
     <div id="portfolio" class="section">
         <h3 class="section__name">Portfolio</h3>
         <div id="portfolio__tabs">
-            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1); return false">Software Development</a>
-            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2); return false">Community Service</a>
-            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3); return false">Mathematics</a>
-            <a id="portfolio__tab4_button" class="button" onclick="gotoPortfolioTab(4); return false">Language & Literature</a>
-            <a id="portfolio__tab5_button" class="button" onclick="gotoPortfolioTab(5); return false">Other</a>
+            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1); return false">Academics & Sports</a>
+            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2); return false">Software Development</a>
+            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3); return false">Community Service</a>
         </div>
         <div id="portfolio__tab1">
+            <h3 class="portfolio__tab_caption">Academics & Sports</h3>
+            <h3>Achievements</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Achievement</th>
+                        <th>Years & Level</th>
+                        <th>Additional Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Got a 1500 on the SAT</td>
+                        <td><p>October 2nd, 2021</p></td>
+                        <td><p>730 EBRW and 770 Math</p></td>
+                    </tr>
+                    <tr>
+                        <td>Top 0.2% at TypeRacer</td>
+                        <td><p>2021</p></td>
+                        <td><p>Average typing speed is 130+ wpm (650+ cpm).</p></td>
+                    </tr>
+                    <tr>
+                        <td>Winner of UOI-2021</td>
+                        <td>
+                            <p>2020-2021, II stage, National level</p>
+                        </td>
+                        <td>Ukrainian Olympiad in Informatics (Competitive Programming)</td>
+                    </tr>
+                    <tr>
+                        <td>Top 5 at iTalent</td>
+                        <td><p>2019-2020, National Stage</p></td>
+                        <td>Desktop & Mobile Software Nomination</td>
+                    </tr>
+                    <tr>
+                        <td><p>Multi-time Winner of Olympiads in Competitive Programming</p></td>
+                        <td>
+                            <p>2019-2020 (3rd place in the region, 1st place in the district)</p>
+                            <p>2018-2019 (1st place in the district)</p>
+                            <p>2017-2018 (1st place in the city)</p>
+                            <p>2016-2017 (1st place in the district)</p>
+                        </td>
+                        <td><p>Competitive Programming</p></td>
+                    </tr>
+                    <tr>
+                        <td>Multi-time Winner of Olympiads in IT</td>
+                        <td>
+                            <p>2019-2020 (2nd place in the district)</p>
+                            <p>2018-2019 (1st place in the district).</p>
+                        </td>
+                        <td>
+                            <p>Using Microsoft Office Word, Excel, PowerPoint, Access for solving non-standard tasks.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Winner of the Regional Festival in Computer Graphics and Animation</td>
+                        <td><p>2017-2018 (1st place in the region)</p></td>
+                        <td>The Web Design nomination</td>
+                    </tr>
+                    <tr>
+                        <td><p>The Grand Prize at the Olimpus International Contest</p></td>
+                        <td><p>2019-2020, 1st place in Mathematics, Computer Science, Biology, English, Ukrainian language.</p></td>
+                        <td><p>Scored the total of 497 out of 500.</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>The Best Student of Educational Establishment (2500+ students)</p></td>
+                        <td><p>2019-2020, a scholarship from Kharkiv City Council.</p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Multi-time Winner of Olympiads in Mathematics</td>
+                        <td>
+                            <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
+                            <p>2018-2019 (3rd place in the city)</p>
+                            <p>2017-2018 (1st place in the city)</p>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Multi-time Winner of the Taras Shevchenko International Language and Literature Competition
+                        </td>
+                        <td>
+                            <p>2017-2018 (3rd place in the region, 1st place in the district)</p>
+                            <p>2016-2017 (1st place nationally, 2nd place in the region, 1st place in the district)</p>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Winner of the Competition in MMA</td>
+                        <td>2018-2019 (2nd place in the district)</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="portfolio__tab2">
             <h3 class="portfolio__tab_caption">Software Development</h3>
             <div>
                 <div>
@@ -153,67 +249,9 @@
                             times, and is actively developed.</p>
                     </div>
                 </div>
-                <div id="collapsible3" class="collapsible">
-                    <p class="collapsible__title">
-                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(3);">
-                            <span class="collapsible__arrow">
-                                ▼
-                            </span>
-                            My Achievements
-                        </a>
-                    </p>
-                    <div class="collapsible__content">
-                        <table class="portfolio__achievements">
-                            <thead>
-                            <tr>
-                                <th>Achievement</th>
-                                <th>Years & Level</th>
-                                <th>Additional Information</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Winner of UOI-2021</td>
-                                <td>
-                                    <p>2020-2021, II stage, National level</p>
-                                </td>
-                                <td>Ukrainian Olympiad in Informatics (Competitive Programming)</td>
-                            </tr>
-                            <tr>
-                                <td>Top 5 at iTalent</td>
-                                <td><p>2019-2020, National Stage</p></td>
-                                <td>Desktop & Mobile Software Nomination</td>
-                            </tr>
-                            <tr>
-                                <td><p>Multi-time Winner of Olympiads in Informatics</p></td>
-                                <td>
-                                    <p>2019-2020 (3rd place in the region, 1st place in the district</p>
-                                    <p>2018-2019 (1st place in the district)</p>
-                                    <p>2017-2018 (1st place in the city)</p>
-                                    <p>2016-2017 (1st place in the district)</p>
-                                </td>
-                                <td><p>Competitive Programming</p></td>
-                            </tr>
-                            <tr>
-                                <td>Multi-time Winner of Olympiads in IT</td>
-                                <td>
-                                    <p>2019-2020 (2nd place in the district)</p>
-                                    <p>2018-2019 (1st place in the district).</p>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Winner of the Regional Festival in Computer Graphics and Animation</td>
-                                <td><p>2017-2018 (1st place in the region)</p></td>
-                                <td>The Web Design nomination</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
-        <div id="portfolio__tab2">
+        <div id="portfolio__tab3">
             <h3 class="portfolio__tab_caption">Community Service</h3>
             <div>
                 <p>
@@ -252,9 +290,9 @@
                         </p>
                     </div>
                 </div>
-                <div id="collapsible4">
+                <div id="collapsible3">
                     <p class="collapsible__title">
-                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(4);">
+                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(3);">
                             <span class="collapsible__arrow">
                                 ▼
                             </span>
@@ -280,149 +318,12 @@
             <div>
                 <h4>Social Media</h4>
                 <p>
-                    I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf">StackOverflow</a> and many programming-related Facebook groups,
+                    I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf" target="_blank">StackOverflow</a> and many programming-related Facebook groups,
                     especially <a href="https://www.facebook.com/groups/python/" target="_blank">Python</a>.
                 </p>
                 <p>
                     I am also the moderator at the <a href="https://www.facebook.com/groups/pythonautomation/" target="_blank">Python Automation</a> Facebook group with 1,500+ members.
                 </p>
-            </div>
-        </div>
-        <div id="portfolio__tab3">
-            <h3 class="portfolio__tab_caption">Mathematics</h3>
-            <div>
-                <p>
-                    I really love Mathematics.
-                </p>
-                <p>
-                    My main areas of interest is Discrete Math
-                    (especially Combinatorics, Probability, Set Theory, and Number Theory) as well as Statistics.
-                </p>
-                <p>
-                    <img src="https://miro.medium.com/max/1248/1*1CziRAeRnF4UsCrhryH9yw.png" alt="Mathematics"/>
-                </p>
-                <div id="collapsible5" class="collapsible">
-                    <p class="collapsible__title">
-                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(5);">
-                            <span class="collapsible__arrow">
-                                ▼
-                            </span>
-                            My Achievements
-                        </a>
-                    </p>
-                    <div class="collapsible__content">
-                        <table class="portfolio__achievements">
-                            <thead>
-                                <tr>
-                                    <th>Achievement</th>
-                                    <th>Years & Level</th>
-                                    <th>Additional Information</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Multi-time Winner of Olympiads in Mathematics</td>
-                                    <td>
-                                        <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
-                                        <p>2018-2019 (3rd place in the city)</p>
-                                        <p>2017-2018 (1st place in the city)</p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="portfolio__tab4">
-            <h3 class="portfolio__tab_caption">Language & Literature</h3>
-            <div>
-                <p>
-                    I really love Mathematics.
-                </p>
-                <p>
-                    My main areas of interest is Discrete Math
-                    (especially Combinatorics, Probability, Set Theory, and Number Theory) as well as Statistics.
-                </p>
-                <p>
-                    <img src="https://miro.medium.com/max/1248/1*1CziRAeRnF4UsCrhryH9yw.png" alt="Mathematics"/>
-                </p>
-                <div id="collapsible5" class="collapsible">
-                    <p class="collapsible__title">
-                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(5);">
-                            <span class="collapsible__arrow">
-                                ▼
-                            </span>
-                            My Achievements
-                        </a>
-                    </p>
-                    <div class="collapsible__content">
-                        <table class="portfolio__achievements">
-                            <thead>
-                                <tr>
-                                    <th>Achievement</th>
-                                    <th>Years & Level</th>
-                                    <th>Additional Information</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Multi-time Winner of Olympiads in Mathematics</td>
-                                    <td>
-                                        <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
-                                        <p>2018-2019 (3rd place in the city)</p>
-                                        <p>2017-2018 (1st place in the city)</p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="portfolio__tab5">
-            <h3 class="portfolio__tab_caption">IMPORTANT</h3>
-            <div>
-                <p>
-
-                </p>
-                <p>
-
-                </p>
-                <div id="collapsible6" class="collapsible">
-                    <p class="collapsible__title">
-                        <a class="collapsible__toggle_link" href="javascript:void(0);" onclick="collapsibleToggle(7);">
-                            <span class="collapsible__arrow">
-                                ▼
-                            </span>
-                            My Achievements
-                        </a>
-                    </p>
-                    <div class="collapsible__content">
-                        <table class="portfolio__achievements">
-                            <thead>
-                                <tr>
-                                    <th>Achievement</th>
-                                    <th>Years & Level</th>
-                                    <th>Additional Information</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Multi-time Winner of the International Taras Shevchenko Student and Students' Language and Literature Competition</td>
-                                    <td>
-                                        <p>2017-2018 (3rd place in the region, 1st place in the district)</p>
-                                        <p>2016-2017 (<strong>1st place nationally</strong>, 2nd place in the region, 1st place in the district)</p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

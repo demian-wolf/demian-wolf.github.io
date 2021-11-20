@@ -117,9 +117,10 @@
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }
 
-table.portfolio__achievements, table.portfolio__achievements th, table.portfolio__achievements td {
+table, table th, table td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 10px;
 }
 
 @media screen and (max-width: 600px) {
