@@ -14,6 +14,7 @@
             tab.style.display = "block";
             tabButton.classList.add("portfolio__tab_button_active");
         }
+
         function hidePortfolioTab(tabId) {
             const tab = document.getElementById(`portfolio__tab${tabId}`);
             const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
@@ -27,6 +28,7 @@
                 tabId === destTabId ? showPortfolioTab(tabId) : hidePortfolioTab(tabId);
             }
         }
+
         function resetPortfolioTabs() {
             for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
                 hidePortfolioTab(tabId);
@@ -41,17 +43,20 @@
         function _getCollapsible(collapsibleId) {
             return document.getElementById(`collapsible${collapsibleId}`);
         }
+
         function _getCollapsibleContent(collapsibleId) {
             return _getCollapsible(collapsibleId).querySelector(".collapsible__content");
         }
+
         function _getCollapsibleArrow(collapsibleId) {
             return _getCollapsible(collapsibleId).querySelector(".collapsible__arrow")
         }
 
         function collapsibleSetState(collapsibleId, destState) {
             _getCollapsibleContent(collapsibleId).style.display = destState ? "block" : "none";
-            _getCollapsibleArrow(collapsibleId).innerHTML = destState ?  "\u25B2": "\u25BC";
+            _getCollapsibleArrow(collapsibleId).innerHTML = destState ? "\u25B2" : "\u25BC";
         }
+
         function collapsibleToggle(collapsibleId) {
             const newState = _getCollapsibleContent(collapsibleId).style.display === "none";
             collapsibleSetState(collapsibleId, newState);
@@ -70,7 +75,7 @@
         <img id="about-me__photo" src="static/images/photo.png" alt='My "photo"'>
         <div id="about-me__text">
             <p>Hi! I'm glad too see you on my Portfolio Website.<br/>
-            My name is Demian Volkov. I am a 16-years-old high-school student from Ukraine.</p>
+                My name is Demian Volkov. I am a 16-years-old high-school student from Ukraine.</p>
             <p>
                 I'm interested in math and linguistics.<br/>
                 I practice martial arts for 10 years.<br/>
@@ -118,101 +123,102 @@
             <h3>Achievements</h3>
             <table>
                 <thead>
-                    <tr>
-                        <th>Achievement</th>
-                        <th>Years & Level</th>
-                        <th>Additional Information</th>
-                    </tr>
+                <tr>
+                    <th>Achievement</th>
+                    <th>Years & Level</th>
+                    <th>Additional Information</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Got a 1500 on the SAT</td>
-                        <td><p>October 2nd, 2021</p></td>
-                        <td><p>730 EBRW and 770 Math</p></td>
-                    </tr>
-                    <tr>
-                        <td>Top 0.2% at TypeRacer</td>
-                        <td><p>2021</p></td>
-                        <td><p>Average typing speed is 130+ wpm (650+ cpm).</p></td>
-                    </tr>
-                    <tr>
-                        <td>Winner of UOI-2021</td>
-                        <td>
-                            <p>2020-2021, II stage, National level</p>
-                        </td>
-                        <td>Ukrainian Olympiad in Informatics (Competitive Programming)</td>
-                    </tr>
-                    <tr>
-                        <td>Top 5 at iTalent</td>
-                        <td><p>2019-2020, National Stage</p></td>
-                        <td>Desktop & Mobile Software Nomination</td>
-                    </tr>
-                    <tr>
-                        <td><p>Multi-time Winner of Olympiads in Competitive Programming</p></td>
-                        <td>
-                            <p>2019-2020 (3rd place in the region, 1st place in the district)</p>
-                            <p>2018-2019 (1st place in the district)</p>
-                            <p>2017-2018 (1st place in the city)</p>
-                            <p>2016-2017 (1st place in the district)</p>
-                        </td>
-                        <td><p>Competitive Programming</p></td>
-                    </tr>
-                    <tr>
-                        <td>Multi-time Winner of Olympiads in IT</td>
-                        <td>
-                            <p>2019-2020 (2nd place in the district)</p>
-                            <p>2018-2019 (1st place in the district).</p>
-                        </td>
-                        <td>
-                            <p>Using Microsoft Office Word, Excel, PowerPoint, Access for solving non-standard tasks.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Winner of the Regional Festival in Computer Graphics and Animation</td>
-                        <td><p>2017-2018 (1st place in the region)</p></td>
-                        <td>The Web Design nomination</td>
-                    </tr>
-                    <tr>
-                        <td><p>The Grand Prize at the Olimpus International Contest</p></td>
-                        <td><p>2019-2020, 1st place in Mathematics, Computer Science, Biology, English, Ukrainian language.</p></td>
-                        <td><p>Scored the total of 497 out of 500.</p></td>
-                    </tr>
-                    <tr>
-                        <td><p>The Best Student of Educational Establishment</p></td>
-                        <td>
-                            <p>2019-2020, a scholarship from Kharkiv City Council</p>
-                            <p>2018-2019, a scholarship from Merefa City Council</p>
-                            <p>2017-2018, a scholarship from Merefa City Council</p>
-                        </td>
-                        <td>
-                            <p>2019-2020: 2500+ students</p>
-                            <p>2017-2018 and 2019-2020: 300+ students</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Multi-time Winner of Olympiads in Mathematics</td>
-                        <td>
-                            <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
-                            <p>2018-2019 (3rd place in the city)</p>
-                            <p>2017-2018 (1st place in the city)</p>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Multi-time Winner of the Taras Shevchenko International Language and Literature Competition
-                        </td>
-                        <td>
-                            <p>2017-2018 (3rd place in the region, 1st place in the district)</p>
-                            <p>2016-2017 (1st place nationally, 2nd place in the region, 1st place in the district)</p>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Winner of the Competition in MMA</td>
-                        <td>2018-2019 (2nd place in the district)</td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td>Got a 1500 on the SAT</td>
+                    <td><p>October 2nd, 2021</p></td>
+                    <td><p>730 EBRW and 770 Math</p></td>
+                </tr>
+                <tr>
+                    <td>Top 0.2% at TypeRacer</td>
+                    <td><p>2021</p></td>
+                    <td><p>Average typing speed is 130+ wpm (650+ cpm).</p></td>
+                </tr>
+                <tr>
+                    <td>Winner of UOI-2021</td>
+                    <td>
+                        <p>2020-2021, II stage, National level</p>
+                    </td>
+                    <td>Ukrainian Olympiad in Informatics (Competitive Programming)</td>
+                </tr>
+                <tr>
+                    <td>Top 5 at iTalent</td>
+                    <td><p>2019-2020, National Stage</p></td>
+                    <td>Desktop & Mobile Software Nomination</td>
+                </tr>
+                <tr>
+                    <td><p>Multi-time Winner of Olympiads in Competitive Programming</p></td>
+                    <td>
+                        <p>2019-2020 (3rd place in the region, 1st place in the district)</p>
+                        <p>2018-2019 (1st place in the district)</p>
+                        <p>2017-2018 (1st place in the city)</p>
+                        <p>2016-2017 (1st place in the district)</p>
+                    </td>
+                    <td><p>Competitive Programming</p></td>
+                </tr>
+                <tr>
+                    <td>Multi-time Winner of Olympiads in IT</td>
+                    <td>
+                        <p>2019-2020 (2nd place in the district)</p>
+                        <p>2018-2019 (1st place in the district).</p>
+                    </td>
+                    <td>
+                        <p>Using Microsoft Office Word, Excel, PowerPoint, Access for solving non-standard tasks.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Winner of the Regional Festival in Computer Graphics and Animation</td>
+                    <td><p>2017-2018 (1st place in the region)</p></td>
+                    <td>The Web Design nomination</td>
+                </tr>
+                <tr>
+                    <td><p>The Grand Prize at the Olimpus International Contest</p></td>
+                    <td><p>2019-2020, 1st place in Mathematics, Computer Science, Biology, English, Ukrainian
+                        language.</p></td>
+                    <td><p>Scored the total of 497 out of 500.</p></td>
+                </tr>
+                <tr>
+                    <td><p>The Best Student of Educational Establishment</p></td>
+                    <td>
+                        <p>2019-2020, a scholarship from Kharkiv City Council</p>
+                        <p>2018-2019, a scholarship from Merefa City Council</p>
+                        <p>2017-2018, a scholarship from Merefa City Council</p>
+                    </td>
+                    <td>
+                        <p>2019-2020: 2500+ students</p>
+                        <p>2017-2018 and 2019-2020: 300+ students</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Multi-time Winner of Olympiads in Mathematics</td>
+                    <td>
+                        <p>2019-2020 (4th place in the region, 2nd place in the district)</p>
+                        <p>2018-2019 (3rd place in the city)</p>
+                        <p>2017-2018 (1st place in the city)</p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Multi-time Winner of the Taras Shevchenko International Language and Literature Competition
+                    </td>
+                    <td>
+                        <p>2017-2018 (3rd place in the region, 1st place in the district)</p>
+                        <p>2016-2017 (1st place nationally, 2nd place in the region, 1st place in the district)</p>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Winner of the Competition in MMA</td>
+                    <td>2018-2019 (2nd place in the district)</td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -282,7 +288,8 @@
                             learn foreign languages competing in real-time.
                         </p>
                         <p>
-                            <a href="https://github.com/demian-wolf/ReversoAPI/"><strong>ReversoAPI</strong></a> is an open-source Pythonic REST API wrapper for the Reverso web
+                            <a href="https://github.com/demian-wolf/ReversoAPI/"><strong>ReversoAPI</strong></a> is an
+                            open-source Pythonic REST API wrapper for the Reverso web
                             services. The project has already received 28 stars on Github, has been downloaded 11k+
                             times, and is actively developed.
                         </p>
@@ -305,7 +312,9 @@
                 <h4>CodeClub</h4>
                 <div>
                     <div>
-                        <img width="128px" height="128px" src="https://codeclub.org/assets/home/mission/code-club-logo-9261b7bce76889aa55f3e783e4fb31abfd3937ab76f3dd8a5d468d533023a96f.png" alt="The CodeClub logo"/>
+                        <img width="128px" height="128px"
+                             src="https://codeclub.org/assets/home/mission/code-club-logo-9261b7bce76889aa55f3e783e4fb31abfd3937ab76f3dd8a5d468d533023a96f.png"
+                             alt="The CodeClub logo"/>
                     </div>
                     <div>
                         <p>
@@ -314,17 +323,26 @@
                             of the world learn to code.
                         </p>
                         <p>
-                        I started working at the <a href="https://codeclub.com.ua/" target="_blank">Ukrainian branch</a> of the organization two years ago,
-                        and became the <a href="https://www.facebook.com/CodeClubUA/posts/3223243804437926" target="_blank">youngest mentor</a> there.
+                            I started working at the <a href="https://codeclub.com.ua/" target="_blank">Ukrainian
+                            branch</a> of the organization two years ago,
+                            and became the <a href="https://www.facebook.com/CodeClubUA/posts/3223243804437926"
+                                              target="_blank">youngest mentor</a> there.
                         </p>
                         <p>
-                            Since then, I've taught 40+ young people from different parts of the country. Not only did they acquire a solid knowledge of the basics of coding, but, what's more important, they got interested in programming, and many of them decided to link their future lives with it. I mentored different students. Some have written their first line of code with me, while others had prior programming experience and were looking for opportunities to boost their skills.
+                            Since then, I've taught 40+ young people from different parts of the country. Not only did
+                            they acquire a solid knowledge of the basics of coding, but, what's more important, they got
+                            interested in programming, and many of them decided to link their future lives with it. I
+                            mentored different students. Some have written their first line of code with me, while
+                            others had prior programming experience and were looking for opportunities to boost their
+                            skills.
                         </p>
                         <p>
                             I conduct weekly online lessons via Zoom, which last about 2 hours on average.
                         </p>
                         <p>
-                            To improve students' learning experience, I built an online LMS (learning management system). Now students have everything in one place, just one click away from them: from sending the homework and receiving the feedback to real-time chats with the mentor.
+                            To improve students' learning experience, I built an online LMS (learning management
+                            system). Now students have everything in one place, just one click away from them: from
+                            sending the homework and receiving the feedback to real-time chats with the mentor.
                             <a href="https://codeclubua.pythonanywhere.com/" target="_blank">Check it out!</a>
                         </p>
                     </div>
@@ -342,12 +360,20 @@
                         <div class="portfolio__gallery">
                             <div class="portfolio__gallery_item">
                                 <p>My report at the end of 2020:</p>
-                                <iframe src="https://www.youtube.com/embed/dvABM9gyNMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                <iframe src="https://www.youtube.com/embed/dvABM9gyNMg" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        loading="lazy">
                                 </iframe>
                             </div>
                             <div class="portfolio__gallery_item">
                                 <p>A video recording of a lesson:</p>
-                                <iframe src="https://www.youtube.com/embed/qnzzT75tyXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                <iframe src="https://www.youtube.com/embed/qnzzT75tyXQ" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        loading="lazy">
                                 </iframe>
                             </div>
                         </div>
@@ -357,11 +383,15 @@
             <div>
                 <h4>Social Media</h4>
                 <p>
-                    I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf" target="_blank">StackOverflow</a> and many programming-related Facebook groups,
+                    I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf"
+                                                     target="_blank">StackOverflow</a> and many programming-related
+                    Facebook groups,
                     especially <a href="https://www.facebook.com/groups/python/" target="_blank">Python</a>.
                 </p>
                 <p>
-                    I am also the moderator at the <a href="https://www.facebook.com/groups/pythonautomation/" target="_blank">Python Automation</a> Facebook group with 1,500+ members.
+                    I am also the moderator at the <a href="https://www.facebook.com/groups/pythonautomation/"
+                                                      target="_blank">Python Automation</a> Facebook group with 1,500+
+                    members.
                 </p>
             </div>
         </div>

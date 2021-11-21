@@ -117,27 +117,6 @@
     background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
 }
 
-table, table th, table td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px;
-}
-
-@media screen and (max-width: 600px) {
-    table thead {
-        display: none;
-    }
-    table td {
-        display: flex;
-    }
-    table td::before {
-        content: "";
-        font-weight: bold;
-        width: 120px;
-        min-width: 120px;
-    }
-}
-
 .portfolio__gallery {
     display: flex;
     flex-wrap: wrap;
