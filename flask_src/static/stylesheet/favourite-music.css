@@ -1,5 +1,0 @@
-audio {vertical-align: middle;}
-
-@media (max-width: 415px) {
-    audio {width: 100%;}
-}

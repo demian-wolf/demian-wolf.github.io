@@ -12,68 +12,6 @@
 
 #about-me__text {}
 
-#interests {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.interest {
-    flex: 0 1 15%;
-    margin: 10px;
-    flex-grow: 1;
-    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
-    border-radius: 32px;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
-}
-
-.interest__title {
-    margin: 25px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.interest__description_container {
-    position: absolute;
-    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
-    border-radius: 32px;
-    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
-    padding: 25px;
-    margin: 25px;
-    display: none;
-}
-
-.interest__description {
-    display: inline;
-    font-style: italic;
-}
-
-.interest:hover .interest__description_container,
-.interest:active .interest__description_container {
-    display: block;
-}
-
-@media screen and (max-width: 900px) {
-    .interest {flex-basis: 100%;}
-}
-
-#fv-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#fv-buttons > a {
-    margin: 10px;
-    padding: 10px;
-    flex-grow: 1;
-}
-
 #sm-buttons {
     display: block;
     margin-top: 1em;

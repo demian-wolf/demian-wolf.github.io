@@ -3,76 +3,16 @@
 {% block title %}Home{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}">
-    <script>
-        const totalPortfolioTabs = 3;
-
-        function showPortfolioTab(tabId) {
-            const tab = document.getElementById(`portfolio__tab${tabId}`);
-            const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
-
-            tab.style.display = "block";
-            tabButton.classList.add("portfolio__tab_button_active");
-        }
-
-        function hidePortfolioTab(tabId) {
-            const tab = document.getElementById(`portfolio__tab${tabId}`);
-            const tabButton = document.getElementById(`portfolio__tab${tabId}_button`);
-
-            tab.style.display = "none";
-            tabButton.classList.remove("portfolio__tab_button_active");
-        }
-
-        function gotoPortfolioTab(destTabId) {
-            for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
-                tabId === destTabId ? showPortfolioTab(tabId) : hidePortfolioTab(tabId);
-            }
-        }
-
-        function resetPortfolioTabs() {
-            for (let tabId = 1; tabId <= totalPortfolioTabs; tabId++) {
-                hidePortfolioTab(tabId);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => gotoPortfolioTab(1));
-    </script>
-    <script>
-        const totalCollapsibles = 3;
-
-        function _getCollapsible(collapsibleId) {
-            return document.getElementById(`collapsible${collapsibleId}`);
-        }
-
-        function _getCollapsibleContent(collapsibleId) {
-            return _getCollapsible(collapsibleId).querySelector(".collapsible__content");
-        }
-
-        function _getCollapsibleArrow(collapsibleId) {
-            return _getCollapsible(collapsibleId).querySelector(".collapsible__arrow")
-        }
-
-        function collapsibleSetState(collapsibleId, destState) {
-            _getCollapsibleContent(collapsibleId).style.display = destState ? "block" : "none";
-            _getCollapsibleArrow(collapsibleId).innerHTML = destState ? "\u25B2" : "\u25BC";
-        }
-
-        function collapsibleToggle(collapsibleId) {
-            const newState = _getCollapsibleContent(collapsibleId).style.display === "none";
-            collapsibleSetState(collapsibleId, newState);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            for (let collapsibleId = 1; collapsibleId <= totalCollapsibles; collapsibleId++) {
-                collapsibleSetState(collapsibleId, false);
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/index.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/liteyt.css') }}"/>
+    <script src="{{ url_for('static', filename='scripts/portfolio.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/collapsible.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/liteyt.js') }}"></script>
 {% endblock %}
 
 {% block content %}
     <div id="about-me">
-        <img id="about-me__photo" src="static/images/photo.png" alt='My "photo"'>
+        <img id="about-me__photo" src="static/images/photo.png" alt='My Photo' width="171" height="171"/>
         <div id="about-me__text">
             <p>
                 Hi! I'm glad to see you on my Portfolio Website.<br/>
@@ -111,7 +51,7 @@
         </a>
         <a class="button" href="https://klavogonki.ru/u/#/546841/" target="_blank"
            title="Клавогонки (en. KeyboardRaces)">
-            <img src="http://klavogonki.ru/favicon.ico" alt="Клавогонки (en. Keyboardraces)">
+            <img src="{{ url_for("static", filename="images/social-media/Klavogonki.png") }}" alt="Клавогонки (en. Keyboardraces)">
         </a>
     </div>
 
@@ -316,7 +256,7 @@
                 <h4>CodeClub</h4>
                 <div>
                     <div>
-                        <img width="128px" height="128px"
+                        <img width="128" height="128"
                              src="https://codeclub.org/assets/home/mission/code-club-logo-9261b7bce76889aa55f3e783e4fb31abfd3937ab76f3dd8a5d468d533023a96f.png"
                              alt="The CodeClub logo"/>
                     </div>
@@ -364,21 +304,31 @@
                         <div class="portfolio__gallery">
                             <div class="portfolio__gallery_item">
                                 <p>My report at the end of 2020:</p>
-                                <iframe src="https://www.youtube.com/embed/dvABM9gyNMg" title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
-                                        loading="lazy">
-                                </iframe>
+                                <div class="video">
+                                    <a class="video__link" href="https://youtu.be/dvABM9gyNMg">
+                                        <picture>
+                                            <source srcset="https://i.ytimg.com/vi_webp/dvABM9gyNMg/maxresdefault.webp" type="image/webp">
+                                            <img class="video__media" src="https://i.ytimg.com/vi/dvABM9gyNMg/maxresdefault.jpg" alt="1. Пилот, разборы, ответы и лайвы">
+                                        </picture>
+                                    </a>
+                                    <button class="video__button" aria-label="Запустить видео">
+                                        <svg width="68" height="48" viewBox="0 0 68 48"><path class="video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                                    </button>
+                                </div>
                             </div>
                             <div class="portfolio__gallery_item">
                                 <p>A video recording of a lesson:</p>
-                                <iframe src="https://www.youtube.com/embed/qnzzT75tyXQ" title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
-                                        loading="lazy">
-                                </iframe>
+                                <div class="video">
+                                    <a class="video__link" href="https://youtu.be/qnzzT75tyXQ">
+                                        <picture>
+                                            <source srcset="https://i.ytimg.com/vi_webp/qnzzT75tyXQ/maxresdefault.webp" type="image/webp">
+                                            <img class="video__media" src="https://i.ytimg.com/vi/qnzzT75tyXQ/maxresdefault.jpg" alt="1. Пилот, разборы, ответы и лайвы">
+                                        </picture>
+                                    </a>
+                                    <button class="video__button" aria-label="Запустить видео">
+                                        <svg width="68" height="48" viewBox="0 0 68 48"><path class="video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
