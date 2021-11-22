@@ -10,8 +10,6 @@
     margin: 20px;
 }
 
-#about-me__text {}
-
 #sm-buttons {
     display: block;
     margin-top: 1em;
@@ -26,7 +24,6 @@
     border-radius: 32px;
 }
 
-.section {}
 .section__name {text-align: center;}
 
 #portfolio {
@@ -39,7 +36,7 @@
     flex-wrap: wrap;
 }
 
-#portfolio__tabs > a {
+.portfolio__tab_button {
     display: flex;
     flex: 1 1 0;
     flex-direction: column;
@@ -62,4 +59,36 @@
 
 .portfolio__gallery_item {
     padding-right: 20px;
+}
+
+#portfolio__tab1_button::before {
+    content: "Academics & Sports";
+}
+
+#portfolio__tab2_button::before {
+    content: "Software Development";
+}
+
+#portfolio__tab3_button::before {
+    content: "Community Service";
+}
+
+
+@media screen and (max-width: 850px) {
+    #portfolio__tab1_button::before {
+        content: url("/static/images/portfolio-tabs/academics.png");
+    }
+
+    #portfolio__tab2_button::before {
+        content: url("/static/images/portfolio-tabs/software-development.png");
+    }
+
+    #portfolio__tab3_button::before {
+        content: url("/static/images/portfolio-tabs/community-service.png");
+    }
+
+    .portfolio__tab_button {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

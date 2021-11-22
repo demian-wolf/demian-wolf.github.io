@@ -58,9 +58,9 @@
     <div id="portfolio" class="section">
         <h2 class="section__name">Portfolio</h2>
         <div id="portfolio__tabs">
-            <a id="portfolio__tab1_button" class="button" onclick="gotoPortfolioTab(1)">Academics & Sports</a>
-            <a id="portfolio__tab2_button" class="button" onclick="gotoPortfolioTab(2)">Software Development</a>
-            <a id="portfolio__tab3_button" class="button" onclick="gotoPortfolioTab(3)">Community Service</a>
+            <a id="portfolio__tab1_button" class="button portfolio__tab_button" onclick="gotoPortfolioTab(1)"></a>
+            <a id="portfolio__tab2_button" class="button portfolio__tab_button" onclick="gotoPortfolioTab(2)"></a>
+            <a id="portfolio__tab3_button" class="button portfolio__tab_button" onclick="gotoPortfolioTab(3)"></a>
         </div>
         <div id="portfolio__tab1">
             <h3 class="portfolio__tab_caption">Academics & Sports</h3>
@@ -81,8 +81,18 @@
                 </tr>
                 <tr>
                     <td>Top 0.2% at TypeRacer</td>
-                    <td><p>2021</p></td>
-                    <td><p>Average typing speed is 130+ wpm (650+ cpm).</p></td>
+                    <td>
+                        <p>
+                            2021
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="https://data.typeracer.com/pit/profile?user=demianwolf&ref=badge" target="_blank">
+                                <img src="https://data.typeracer.com/misc/badge?user=demianwolf" alt="TypeRacer.com scorecard for user demianwolf"/>
+                            </a>
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <td>Winner of UOI-2021</td>
@@ -236,6 +246,11 @@
                             open-source Pythonic REST API wrapper for the Reverso web
                             services. The project has already received 28 stars on Github, has been downloaded 11k+
                             times, and is actively developed.
+                        </p>
+                        <p>
+                            <a href="https://codeclubua.pythonanywhere.com/" target="_blank"><strong>CodeClubUA LMS</strong></a>
+                            is a learning management system I built for my students at CodeClub Ukraine.
+                            See the <a href="javascript:void(0);" onclick="gotoPortfolioTab(3);">Community Service tab</a> for more information.
                         </p>
                     </div>
                 </div>
