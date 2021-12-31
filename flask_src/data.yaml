@@ -1,0 +1,258 @@
+index:
+  about-me:
+    photo:
+      src: images/photo.png
+      width: 171
+      height: 171
+
+    text:
+      - Hi! I'm glad to see you on my Portfolio Website.<br/>My name is Demian Volkov. I am a 16-years-old high-school student from Ukraine.
+      - I'm interested in math, linguistics, and the applications of biology in the field of AI.<br/>I have practiced martial arts for 10 years.<br/>But my main interest is software development.
+      - See my Portfolio below for details.
+
+  social-media:
+    - name: Email
+      href: mailto:demianwolfssd@gmail.com
+    - name: Telegram
+      href: https://t.me/demian_wolf
+    - name: Facebook
+      href: https://www.facebook.com/demian.wolf.942
+    - name: LinkedIn
+      href: https://www.linkedin.com/in/demian-volkov-26557b16b/
+    - name: Github
+      href: https://github.com/demian-wolf
+    - name: StackOverflow
+      href: https://stackoverflow.com/users/8661764/demian-wolf?tab=profile
+
+portfolio:
+  academics-and-athletics:
+    achievements:
+      - title: 1500 SAT Score
+        years-level:
+          - October 2nd, 2021
+        details:
+          - <a href="static/images/portfolio-achievements/sat1500-oct2.png" target="_blank" title="Zoom in"><img width="182" src="static/images/portfolio-achievements/sat1500-oct2.png" alt="730 EBRW and 770 Math"/></a>
+
+      - title: Top 0.1% at TypeRacer
+        years-level:
+          - 2021
+        details:
+          - <a href="https://data.typeracer.com/pit/profile?user=demianwolf&amp;ref=badge" target="_blank"><img alt="130+ wpm average speed" height="240" src="https://data.typeracer.com/misc/badge?user=demianwolf" width="120"/></a>
+
+      - title: Winner of UOI-2021
+        years-level:
+          - 2020-2021, II stage, National level
+        details:
+          - Ukrainian Olympiad in Informatics (Competitive Programming)
+
+      - title: Top 5 at iTalent
+        years-level:
+          - 2019-2020, National Stage
+        details:
+          - Desktop &amp; Mobile Software Nomination
+
+      - title: Multi-time Winner of Olympiads in Competitive Programming
+        years-level:
+          - 2019-2020 (3rd place in the region, 1st place in the district)
+          - 2018-2019 (1st place in the district)
+          - 2017-2018 (1st place in the city)
+          - 2016-2017 (1st place in the district)
+        details:  []
+
+      - title: Multi-time Winner of Olympiads in IT
+        years-level:
+          - 2019-2020 (2nd place in the district)
+          - 2018-2019 (1st place in the district)
+        details:
+          - Using Microsoft Office Word, Excel, PowerPoint, Access for solving non-standard tasks.
+
+      - title: Winner of the Regional Festival in Computer Graphics and Animation
+        years-level:
+          - 2017-2018 (1st place in the region)
+        details:
+          - The Web Development nomination
+
+      - title: The Grand Prize at the Olimpus International Contest
+        years-level:
+          - 2019-2020, 1st place in Mathematics, Computer Science, Biology, English, Ukrainian language.
+        details:
+          - Scored the total of 497 out of 500.
+
+      - title: The Best Student of Educational Establishment
+        years-level:
+          - 2019-2020, a scholarship from Kharkiv City Council
+          - 2018-2019, a scholarship from Merefa City Council
+          - 2017-2018, a scholarship from Merefa City Council
+        details:
+          - 2019-2020: 2700+ students
+          - 2017-2018 and 2018-2019: 300+ students
+
+      - title: Multi-time Winner of Olympiads in Mathematics
+        years-level:
+          - 2019-2020 (4th place in the region, 2nd place in the district)
+          - 2018-2019 (3rd place in the city)
+          - 2017-2018 (1st place in the city)
+        details: []
+
+      - title: Multi-time Winner of the Taras Shevchenko International Language and Literature Competition
+        years-level:
+          - 2017-2018 (3rd place in the region, 1st place in the district)
+          - 2016-2017 (1st place nationally, 2nd place in the region, 1st place in the district)
+        details: []
+
+      - title: Winner of the Competition in MMA
+        years-level:
+          - 2018-2019 (2nd place in the district)
+        details: []
+
+  software-development:
+    years:  5+
+    experience:
+      - creating <strong>websites</strong>
+      - building <strong>desktop</strong> and <strong>mobile</strong> applications
+      - writing scripts for <strong>web scraping</strong> and <strong>automation</strong>, including Unix and Windows system administration
+      - the development of <strong>Data Science</strong> and <strong>Machine Learning</strong> solutions, especially in the area of <strong>NLP</strong>
+      - active participation in <strong>competitive programming</strong> contests and olympiads.
+    tech-stack:
+      Python:
+        - Flask
+        - Django
+        - Pyramid
+        - bottle
+        - PyQt5
+        - tkinter
+        - wxPython
+        - Kivy
+        - pygame
+        - requests
+        - grequests
+        - aiohttp
+        - BeautifulSoup4
+        - lxml
+        - Scrapy
+        - Selenium
+        - pywinauto
+        - pyautogui
+        - NumPy
+        - Pandas
+        - matplotlib
+        - NLTK
+        - spaCy
+        - Plotly
+        - OpenCV
+        - scikit-learn
+        - TensorFlow
+        - Cython
+        - Nuitka
+        - Numba
+        - unittest
+        - nose
+        - pytest
+        - doctest
+      HTML5, XHTML:
+      CSS3:
+        - Less
+        - SASS
+        - BootStrap
+      JS:
+        - VanillaJS
+        - Node.js
+        - jQuery
+        - Vue.js
+        - React
+        - BootStrap
+      C++:
+        - STL
+        - Boost
+        - Qt
+        - Windows API
+        - OpenCV
+      Tcl:
+        - Tk
+        - Tkhtml
+        - selenium.tcl
+      bash:
+      Java:
+        - Selenium
+      SQL databases:
+        - MySQL
+        - PostgreSQL
+        - SQLite3
+      NoSQL databases:
+        - MongoDB
+        - Redis
+      XML, XSD:
+      JSON:
+      YAML:
+      Pickling:
+      VCS:
+        - Git
+        - SVN
+        - Mercurial
+      Github, BitBucket, GitLab:
+      Heroku, Pythonanywhere:
+ 
+    projects:
+      - name: Cosmopolite
+        href: https://www.cosmopolite.online/
+        description: provides people from around the globe with opportunities to learn foreign languages competing in real-time.
+      - name: ReversoAPI
+        href: https://github.com/demian-wolf/ReversoAPI/
+        description: is an open-source Pythonic REST API wrapper for the Reverso web services. The project has already received 29 stars on Github, has been downloaded 11k+ times, and is actively developed.
+      - name: CodeClub Learning Management System
+        href: https://codeclubua.pythonanywhere.com/
+        description: is a learning management system I built for my students at CodeClub Ukraine. See the Community Service tab for more information.
+
+  community-service:
+    description:
+      - |
+        Software development is an art.
+        While writers create books and composers make music, software developers build websites, apps,
+        and games without which we can't imagine our lives. I want others to dive into Software Development,
+        feel it, and use it to make our world a better place. That's why I share my experience with people
+        around the globe.
+    codeclub:
+      logo:
+        width: 128
+        height: 128
+        src: "https://codeclub.org/assets/home/mission/code-club-logo-9261b7bce76889aa55f3e783e4fb31abfd3937ab76f3dd8a5d468d533023a96f.png"
+      text:
+        - |
+          I am a mentor at <a href="https://codeclub.org/" target="_blank">CodeClub</a>,
+          an international non-profit organization that helps teenagers from 160+ countries
+          worldwide learn to code.
+        - |
+          I started working at the <a href="https://codeclub.com.ua/" target="_blank">Ukrainian branch</a>
+          of the organization two years ago, and became the
+          <a href="https://www.facebook.com/CodeClubUA/posts/3223243804437926" target="_blank">youngest mentor</a>
+          there.
+        - |
+          Since then, I've taught 40+ young people from different parts of the country. Not only did
+          they acquire a solid knowledge of the basics of coding, but, what's more important, they got
+          interested in programming, and many of them decided to link their future lives with it.
+        - |
+          I mentored different students. Some have written their first line of code with me, while
+          others had prior programming experience and were looking for opportunities to boost their
+          skills.
+        - |
+          I conduct weekly online lessons via Zoom, which last about 2 hours on average.
+        - |
+          To improve students' learning experience, I built an online LMS (learning management system).
+          Now students have everything in one place, just one click away from them: from
+          sending the homework and receiving the feedback to real-time chats with the mentor.
+          <a href="https://codeclubua.pythonanywhere.com/" target="_blank">Check it out!</a>
+    social-media:
+      text:
+        - |
+          I am an active participant at <a href="https://stackoverflow.com/users/8661764/demian-wolf"
+          target="_blank">StackOverflow</a> and many programming-related Facebook groups,
+          especially <a href="https://www.facebook.com/groups/python/" target="_blank">Python</a>.
+        - |
+          I am also the moderator at the
+          <a href="https://www.facebook.com/groups/pythonautomation/" target="_blank">Python Automation</a>
+          Facebook group with 1,500+ members.
+    gallery:
+      - title: My report at the end of 2020
+        id: dvABM9gyNMg
+      - title: A video recording of a lesson
+        id: qnzzT75tyXQ

@@ -1,29 +1,36 @@
-const totalCollapsibles = 3;
+class Collapsible {
+    constructor(element) {
+        this.element = element;
 
-function _getCollapsible(collapsibleId) {
-    return document.getElementById(`collapsible${collapsibleId}`);
+        const titleElement = element.querySelector(".collapsible__title");
+        this.title = titleElement.innerText;
+
+        titleElement.innerHTML = `<a class="collapsible__toggle_link"><span class="collapsible__arrow"></span>${this.title}</a>`;
+
+        this.toggleLinkElement = titleElement.querySelector(".collapsible__toggle_link");
+        this.toggleLinkElement.setAttribute("href", "javascript:void(0);");
+        this.toggleLinkElement.addEventListener("click", () => this.toggle());
+
+        this.arrowElement = this.toggleLinkElement.querySelector(".collapsible__arrow");
+        this.contentElement = element.querySelector(".collapsible__content");
+
+        this.setState(false);
+    }
+
+    setState(destState) {
+        this.contentElement.style.display = destState ? "block" : "none";
+        this.arrowElement.innerHTML = destState ? "\u25B2" : "\u25BC";
+
+        this.state = destState;
+    }
+
+    toggle() {this.setState(!this.state);}
 }
 
-function _getCollapsibleContent(collapsibleId) {
-    return _getCollapsible(collapsibleId).querySelector(".collapsible__content");
-}
-
-function _getCollapsibleArrow(collapsibleId) {
-    return _getCollapsible(collapsibleId).querySelector(".collapsible__arrow")
-}
-
-function collapsibleSetState(collapsibleId, destState) {
-    _getCollapsibleContent(collapsibleId).style.display = destState ? "block" : "none";
-    _getCollapsibleArrow(collapsibleId).innerHTML = destState ? "\u25B2" : "\u25BC";
-}
-
-function collapsibleToggle(collapsibleId) {
-    const newState = _getCollapsibleContent(collapsibleId).style.display === "none";
-    collapsibleSetState(collapsibleId, newState);
-}
 
 document.addEventListener("DOMContentLoaded", () => {
-    for (let collapsibleId = 1; collapsibleId <= totalCollapsibles; collapsibleId++) {
-        collapsibleSetState(collapsibleId, false);
-    }
+    Array.prototype.forEach.call(
+        document.getElementsByClassName("collapsible"),
+        collapsibleElement => new Collapsible(collapsibleElement)
+    );
 });
