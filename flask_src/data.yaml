@@ -31,7 +31,8 @@ portfolio:
         years-level:
           - October 2nd, 2021
         details:
-          - <a href="static/images/portfolio-achievements/sat1500-oct2.png" target="_blank" title="Zoom in"><img width="182" src="static/images/portfolio-achievements/sat1500-oct2.png" alt="730 EBRW and 770 Math"/></a>
+          - <img width="200" src="static/images/portfolio-achievements/sat1500-oct2.png" alt="770 Math & 730 EVBRW"/>
+          - <a href="static/misc/SATStudentScoreReport_1641689379230.pdf" target="_blank">Official Score Report (PDF)</a>
 
       - title: Top 0.1% at TypeRacer
         years-level:
