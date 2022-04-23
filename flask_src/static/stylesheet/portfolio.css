@@ -55,7 +55,7 @@ table, table th, table td {
     padding: 10px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
     .portfolio__tab_button:nth-child(1)::before {
         content: url("/static/images/portfolio-tabs/academics.png");
     }
