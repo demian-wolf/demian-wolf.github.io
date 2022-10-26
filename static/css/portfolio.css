@@ -21,7 +21,7 @@
 }
 
 .portfolio__tab_button_active {
-    background-image: linear-gradient(to bottom right, rgb(240, 244, 250), rgb(180, 199, 231));
+    background-image: linear-gradient(to bottom right, #f0f4fa, #b4c7e7);
 }
 
 .portfolio__gallery {
@@ -57,15 +57,15 @@ table, table th, table td {
 
 @media screen and (max-width: 900px) {
     .portfolio__tab_button:nth-child(1)::before {
-        content: url("/static/images/portfolio-tabs/academics.png");
+        content: url("/static/images/portfolio/academics.png");
     }
 
     .portfolio__tab_button:nth-child(2)::before {
-        content: url("/static/images/portfolio-tabs/software-development.png");
+        content: url("/static/images/portfolio/software.png");
     }
 
     .portfolio__tab_button:nth-child(3)::before {
-        content: url("/static/images/portfolio-tabs/community-service.png");
+        content: url("/static/images/portfolio/volunteering.png");
     }
 
     .portfolio__tab_button {

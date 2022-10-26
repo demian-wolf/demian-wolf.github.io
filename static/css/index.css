@@ -4,7 +4,10 @@
     justify-content: center;
     align-items: center;
 }
-#about-me__photo {margin: 20px;}
+
+#about-me__photo {
+    margin: 20px;
+}
 
 #sm-buttons {
     display: block;
@@ -12,6 +15,7 @@
     margin-bottom: 1em;
     text-align: center;
 }
+
 #sm-buttons > a, #sm-buttons > a > img {
     width: 32px;
     height: 32px;
@@ -19,4 +23,6 @@
     border-radius: 32px;
 }
 
-.section__name {text-align: center;}
+.section__name {
+    text-align: center;
+}
