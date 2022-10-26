@@ -9,7 +9,6 @@ jsmin==3.0.1
 lesscpy==0.15.1
 MarkupSafe==2.1.1
 ply==3.11
-PyYAML==6.0
 rcssmin==1.1.1
 six==1.16.0
 Werkzeug==2.2.2
